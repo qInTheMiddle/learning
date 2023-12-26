@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+    <script>
+        // the elements in different arrays that are nested in another array have no connection 
+        // with each other and altering the elements in multiple arrays at once is ineffecient
+        // also forgetting to enter an element can cause a programming error
+
+        //     var students = [
+        //         ["kkkk", "oooo", "mmmm", "ssss"], 
+        //         [15, 16, 17, 16], 
+        //         ["2000", "2001", "2002", "2003"]
+        //     ]
+
+        //     console.log("the name is: "+ students[0][0])
+        //     console.log("the age is: "+ students[1][0])
+        //     console.log("the date is: "+ students[2][0])
+        
+        // groups of value can have a common object that connects the values:
+
+        let student = {
+            firstName: "kkkk",
+            lastName: "oooo",  
+            age: 15, 
+            year: "2000", 
+
+            printFullName: function(){
+                console.log(this.firstName + " " + this.lastName)
+            }
+        }
+
+        student.printFullName()
+
+
+        // console.log(student.firstName)
+
+        // function printFullName(st){
+        //     console.log(st.firstName + " " + st.lastName)
+        // }
+
+        // printFullName(student)
+
+    </script>
+
+</html>

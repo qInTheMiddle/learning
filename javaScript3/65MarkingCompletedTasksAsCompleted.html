@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- EXTERNAL LIBRARIES -->
+    <!-- font library -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajwal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet" -->
+    <!-- icon library -->
+    <!-- <link rel="stylessheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />     -->
+
+    <style>
+        body {
+            background-color: rgb(30, 0, 77);
+            /* font-family: 'Tajawal', sans-serif; */
+        }
+        .task {
+            display: flex;
+            background-color: white;
+            padding: 4px;   
+            border-bottom: solid black 1px;
+            transition: box-shadow 0.2s;
+        }
+
+        .done {
+            background-color: rgb(158, 253, 160);
+        }
+
+        .task:hover {
+            box-shadow: 0px 3px 15px rgba(97, 97, 97, 0.843);
+        }
+        .tasks-table {
+            background-color: rgb(239, 239, 239);
+            width: 60%;
+            /* height: 500px; */
+            margin-top: 130px;
+        }
+
+        button {
+            border: none;
+            font-size: 20px;
+            box-shadow: 0px 3px 5px rgba(168, 168, 168, 0.38);
+        }
+        button.circular {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            /* this is to diplay the icon in the middle of the button */
+            line-height: 0;
+    }
+    </style>
+</head>
+<body>
+    <div style="direction: rtl">
+        <!-- center div -->
+        <div style="display: flex; justify-content: center; align-items: center">
+            <!-- tasks table -->
+            <div class="tasks-table">
+                <!-- HEADER -->
+                <div style="width: 100%; text-align: center; background: rgb(92, 52, 155); color: white; padding-top: 8px; padding-bottom: 8px">
+                    <h1 style="display: inline">My tasks</h1>
+                    <button id="add-btn" class="circular" style="float: right; background: white; margin-right: 10px;">
+                        <!-- <span class="material-symbols-outlined">
+                            add
+                        </span> -->add
+                    </button>
+                </div>
+                <!-- //HEADER -->
+
+                <!-- tasks -->
+                <div id="tasks" style="padding: 20px">
+                   
+                    <!-- task -->
+                    <div class="task">    
+                    </div>
+                    <!-- //task -->
+
+                    <!-- task -->
+                    <div class="task">    
+                    </div>
+                    <!-- //task -->
+
+                    <!-- task -->
+                    <div class="task">    
+                    </div>
+                    <!-- //task -->
+
+                    <!-- task -->
+                    <div class="task">    
+                    </div>
+                    <!-- //task -->
+
+                                
+                    
+                </div>
+                <!-- //tasks -->
+            </div>        
+            <!-- //tasks table -->
+        </div>
+        <!-- // cneter div -->
+    </div>
+</body>
+
+<script>
+
+
+
+    let tasks = [
+        {
+            "title": "reading a book",
+            "date": "15/10/2030",
+            "isDone": false
+
+        },
+        {
+            "title": "finishing the final project",
+            "date": "15/10/2030",
+            "isDone": false
+
+        },
+        {
+            "title": "finishing js",
+            "date": "15/10/2030",
+            "isDone": false
+
+        },
+        {
+            "title": "solving the challenge",
+            "date": "12/10/2040",
+            "isDone": true
+        }, 
+        
+    ]
+
+    function fillTasksOnThePage(){
+
+        // var x = 10
+
+        // // var y = ""
+
+        // // if (x < 5){
+        // //     y = "less than 5"
+        // // }else {
+        // //     y = "equal or greater than 5"
+        // // }
+        // // instead of this conditional statement we use ternary condition as follows:
+
+        // var y = x > 5? "equal or greater than 5" : "less than 5"
+
+        // // this is  simple explanation of how to write a ternary condition
+
+        document.getElementById("tasks").innerHTML = ""
+
+        let index = 0
+        for(task of tasks){
+
+        let content = 
+        
+        `
+    
+            <!-- task -->
+            <!-- <div class="task done"> -->
+            <div class="task ${task.isDone ? 'done' : ''} ">
+                <!-- TASKS INFO -->
+                <!-- <div style="width: 70%; background-color: white"> -->
+                <div style="width: 70%;">
+                    <h2>${task.title}</h2>
+
+                       <div>            
+                        <!-- <span class="material-symbols-outlined">
+                            calender_month
+                        </span> -->
+                    <!-- date info -->
+                        <span>
+                        ${task.date}
+                        </span>
+                    <!-- // date info -->
+                    </div>
+                </div>
+                <!-- // TASKS INFO -->
+
+                <!-- TASKS ACTIONS -->
+                <!-- <div style="display: flex; justify-content: space-between; align-items: center; background-color: antiquewhite; width: 20%"> -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 20%;">
+                    <button onclick="deleteTask(${index})" class="circular" style="background-color: rgb(114, 0, 0); color: white">
+                        <!-- the <span> below will not work because the library it belongs to was not
+                            imported -->
+                         <!-- <span class="material-icons">delete</span>     -->
+                         <!-- the next <span> will work because it is included
+                             in the library we import-->
+                         <!-- <span class="material-synbols-outlined">
+                             delete
+                        </span> -->d
+                    </button>
+
+                    ${task.isDone ? `
+                        <button onclick="toggleTaskCompletion(${index})" class="circular" style="background-color: rgb(118, 0, 101); color: white">
+                            <!-- <span class="material-synbols-outlined">
+                                cancel
+                            </span> -->
+                            c1</button>
+                        ` : `
+                        <button onclick="toggleTaskCompletion(${index})" class="circular" style="background-color: rgb(0, 150, 30); color: white">
+                            <!-- <span class="material-synbols-outlined">
+                                done
+                            </span> -->
+                            c2</button>
+                    `}
+                    
+
+                    <button onclick="editTask(${index})" class="circular" style="background-color: rgba(0, 10, 197, 0.692); color: white">
+                        <!-- <span class="material-synbols-outlined">
+                            edit
+                        </span> -->
+                        e</button>
+
+                </div>
+                 <!-- // TASKS ACTIONS -->
+            </div>
+            <!-- //task -->
+
+        `
+
+        document.getElementById("tasks").innerHTML += content
+        index++
+        
+    }
+
+    }
+
+    fillTasksOnThePage()
+
+    document.getElementById("add-btn").addEventListener("click", function(){
+            // alert("Ttttt")
+            // alert is used to test the click event listener
+            console.log(Date())
+
+            let now = new Date()
+            let date = now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear() + " | " + now.getHours() + ":" + now.getMinutes()
+            let taskName = prompt("please enter the title of the task")
+
+            
+
+            let taskObj = {
+                "title" : taskName,
+                "date" : date,
+                "isDone" : false
+
+            }
+            // console.log(taskName)
+            // tasks.push(taskName)  
+            console.log(taskObj)
+            tasks.push(taskObj)
+            fillTasksOnThePage()
+        })
+
+
+    function deleteTask(index){
+        let task = tasks[index]
+        let isConfirmed = confirm("Are you absolutely sure that want to delete: " + task.title)
+        console.log(isConfirmed)
+        if (isConfirmed == true){
+
+        
+        
+        // alert(index)
+       
+        tasks.splice(index, 1)
+        
+        fillTasksOnThePage()
+        
+        // like alert() and prompt() there is also confirm() for confirmation
+        }
+    }
+
+
+
+    function editTask(index){
+        let task = tasks[index]
+        let newTaskTitle = prompt("please enter the new name of the task", task.title)
+        
+        task.title = newTaskTitle
+        // alert(newTaskTitle)
+        fillTasksOnThePage()
+    }
+
+    function toggleTaskCompletion(index){
+        let task = tasks[index]
+
+        // if (task.isDone){
+        //     task.isDone = false
+        // }else {
+        //     task.isDone = true
+        // }
+        task.isDone = !task.isDone
+        // the ! here is used to reverse the value like we learned about this in the earlier
+        // lessons of js
+
+        fillTasksOnThePage()
+    }
+  
+
+    // THis part can be considered part of Update and weather it is completed or not and
+    // it uses a different button 
+    // the visual reflection in this part is the check mark meaning changing the button 
+    // the programmatic reflection here is the "isDone" part of object with true or
+    // false values 
+    // if we simply change the values of isDone it will not be reflected on the webpage
+    // immediately and like before we must reflect that on visual rep by changing the 
+    // background color to green in this scenario
+    // the part fo the code that is used to represent the code visual is the for loop
+    // part of the fillTaskOnThePage() function
+    // note: the teacher just mentioned that he is using an extension that is related 
+    // to the brackets that changes their collors to show their relation to each other 
+    // so the different colors on his vs code might be because of extension or extensions
+    // and not because the vs code version like i previously thought
+    // the class="task" i is where we could target the background color
+    // to do this we will create a new class .done class in the style section using css
+    // with the new desired background color
+    // and because isDone has a boolean value w will use a condionanl statement 
+    // in this case we will use something called ternary condition that the teacher 
+    // hasn't been covered before but apperently is more effeicient in this particular 
+    // case it is defined as and abbriviated conditional statement and the given example 
+    // for it is shown in comment section in the first part inside the fillTaskOnThePage()
+    // function
+    // We then put the following ternary condition inside the class="" part of the 
+    // first <div> of the for loop in the fillTaskOnThePage(): 
+    // ${task.isDone ? 'done' : ''} this ternary condition will replace the whole 
+    // ${} with done if isDone = true and if it is not true it will replace it with
+    // the nothing in the second '' of the ternary condition and that is equivelant
+    // to deleting it meaning it willl delete it   
+    // next we will use the index on the complete button to seperate the complete buttons 
+    // according to index like we did with the other two buttons previously 
+    // to function name was changed from completetask() to toggleTaskCompletion()
+    // because it is a good programmatic practice to make the names mean the same 
+    // thing that the function does 
+    // next we will be talking about storing the tasks so that we dont loose everything
+    // we did on the visual side everytime we update
+
+
+ 
+</script>
+
+</html>
+
+
+

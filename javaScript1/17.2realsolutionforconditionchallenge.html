@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center; background-color: darkgoldenrod">
+        <div>
+            <h3>weight</h3>
+            <input type="text" id="weight-input">
+        </div>
+        <div>
+            <h3>height</h3>
+            <input type="text" id="height-input">
+        </div>
+
+        <button id="submit-btn">calculate</button>
+
+        <div>
+            <h4 id="bmi"></h4>
+            <h3 id="bmi-category"></h3>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.getElementById("submit-btn").addEventListener("click", function() {
+        console.log("clicked")
+        var weight = document.getElementById("weight-input").value
+        var height = document.getElementById("height-input").value
+        console.log(weight, height)
+
+        var bmi = weight/(height*height)
+        console.log(bmi)
+
+        document.getElementById("bmi").innerHTML = bmi
+
+        // in order to be efficient and write less code the code was changed
+        var bmiCategory = "thin"
+        if (bmi < 18) {
+            bmiCategory/*document.getElementById("bmi-category").innerHTML*/ = "thin"
+        } else if (bmi < 24.9) {
+            bmiCategory/*document.getElementById("bmi-category").innerHTML*/ = "ideal weight"
+        } else if (bmi < 29.9) {
+            bmiCategory/*document.getElementById("bmi-category").innerHTML*/ = "over weight"
+        } else if (bmi < 34.9) {
+            bmiCategory/*document.getElementById("bmi-category").innerHTML*/ = "obese level1"
+        } else if (bmi < 39.9) {
+            bmiCategory/*document.getElementById("bmi-category").innerHTML*/ = "obese level2"
+        } else {
+            bmiCategory/*document.getElementById("bmi-category").innerHTML*/ = "dangerously obese"
+        }
+        document.getElementById("bmi-category").innerHTML = bmiCategory
+    })
+    // try definig varaiables in th eright place (scope)
+</script>
+
+</html>

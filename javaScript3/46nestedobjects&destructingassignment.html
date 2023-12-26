@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid white;
+            text-align: center;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: rgb(60, 0, 60)">
+        <table id="students" style="color: white">
+            <tr style="width: 50%; font-size: 50px; ">
+                <th>Name</th>
+                <th>Age</th>
+                <th>Year</th>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+<script>
+    let st = {
+        name: "Yyyyy",
+        age: 25
+    }
+
+    // let name = st.name
+    // let age = st.age
+    //  a better and simpler way to do this is
+    // Destructuring assignment: assigning multiple keys of objects and indexes of 
+    // array to multiple new values at once 
+
+    let{name, age} = st
+    console.log(name, age)
+
+    var arr = [10, 20, 30]
+
+    let [first, second, third] = arr
+
+    console.log(first, second, third)
+
+    let students = [
+            {
+                name: {
+                    firstName: "kkkk", 
+                    lastName: "oooo",
+                }, 
+                firstName: "kkkk",
+                lastName: "oooo",  
+                age: 15, 
+                year: "2000", 
+             
+
+                printFullName: function(){
+                console.log(this.firstName + " " + this.lastName)
+                },
+
+                courses: [
+                    {name: "math", credits: 4}, 
+                    {}
+                ],
+            }, 
+            {
+                name: {
+                    firstName: "kkkk", 
+                    lastName: "oooo",
+                }, 
+                firstName: "aaaa",
+                lastName: "oooo",  
+                age: 15, 
+                year: "2002", 
+                 
+
+                printFullName: function(){
+                console.log(this.firstName + " " + this.lastName)
+                }
+            }, 
+            {
+                name: {
+                    firstName: "kkkk", 
+                    lastName: "oooo",
+                }, 
+                firstName: "ssss",
+                lastName: "oooo",  
+                age: 15, 
+                year: "2010", 
+                 
+
+                printFullName: function(){
+                console.log(this.firstName + " " + this.lastName)
+                }
+            } 
+
+        ]
+        
+        // this is also another method of destructuring assignment:
+        function printFullName({firstName, lastName})
+        {
+            console.log(firstName, lastName)
+        }
+
+        // another method of destructuring assignment in javascript:
+        for ({name, age, year} of students){
+
+            let content = `<tr> 
+                             <td>${name.firstName}</td> 
+                             <td>${age}</td> 
+                             <td>${year}</td> 
+                           </tr>`
+            document.getElementById("students").innerHTML += content
+        }
+
+</script>
+
+</html>

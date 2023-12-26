@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="numbers" style="text-align: center; font-size: 40px;"></div>
+</body>
+
+<script>
+    var numbers = [
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    ]
+
+    for (var i = 0; i < numbers.length; i++){
+        var numberGroup1 = numbers[i]
+        // document.getElementById("numbers").innerHTML += "<br>" + `<h1> class ${i+1} </h1>` 
+
+        for (var j = 0; j < numberGroup1.length; j++){
+            var numberGroup2 = numberGroup1[j]
+            document.getElementById("numbers").innerHTML += `Multiplication Table of ${numberGroup2} <br><br>`
+            for (var n = 0; n < numberGroup1.length; n++){
+                var numberGroup3 = numberGroup2 * (n + 1)
+                document.getElementById("numbers").innerHTML += `${numberGroup2} * ${n+1} = ${numberGroup3}<br> `
+            }
+            document.getElementById("numbers").innerHTML += "<br><br>--------------------<br><br>"
+        }
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <div style="color: white; width: 100%; font-size: 40px; height: 50vh; background-color: rgb(0, 0, 0.5)">
+        <ul id="ul">
+            <li>aaaaa</li>
+            <li id="kkkkkk-li">kkkkkk</li>
+            <li>oooooo</li>
+        </ul>
+    </div>
+
+
+    <style></style>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // the text that is inside the tag is a node and an object in its self
+    // document.getElementById("ul").innerHTML += "<li>yyyyy</li>"
+    let liElement = document.createElement("li")
+    let textContent = document.createTextNode("yyyyyy")
+    console.log(textContent)
+    liElement.appendChild(textContent)
+    document.getElementById("ul").appendChild(liElement)
+
+    document.getElementById("ul").removeChild(liElement)
+
+    let kkkkkkNode = document.getElementById("kkkkkk-li")
+    
+    document.getElementById("ul").removeChild(kkkkkkNode)
+</script>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="school" style="text-align: center; font-size: 50px;"></div>
+</body>
+
+<script>
+    // forloops with arrays are much more common 
+    var school = ["T.Tmrjn", "T.Hmdhasspoken", "Thisistheway", "Khisoosfkhristos", "Yahhwahoo"]
+    // console.log(school)
+    for (var memberIndex = 0; memberIndex <= school.length - 1; memberIndex++) {
+        if (school[memberIndex][0] == "T" && school[memberIndex][1] == "."){
+            console.log(school[memberIndex][0][1])
+            document.getElementById("school").innerHTML += school[memberIndex] + "<br>"
+        }
+    }
+</script>
+
+</html>

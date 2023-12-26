@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="title">hello world</h2>
+    <h3 id="result"></h3>   
+
+
+
+</body>
+  <script>
+      var myStr = document.getElementById("title").innerHTML
+      console.log(myStr)
+      var allCaps = myStr.toUpperCase()
+    //   console.log(myStr, '\n', allCaps)
+      var replace0 = allCaps.replace("O", "Y") 
+    //   console.log(replace0)
+      var reverseStr = replace0.split("").reverse().join("");
+    //   console.log(reverseStr)
+    // another challlenge is to assign a var to value from html body
+    // use the same functions then display the same result in html
+    document.getElementById("result").innerHTML = `${allCaps} --- ${replace0} --- ${reverseStr}`
+  </script>
+</html>

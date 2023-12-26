@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0b+OpCW5GVHUNjv9rOmY0lvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script> -->
+
+</head>
+<body>
+    <h1 id="text">Hello World</h1>
+</body>
+
+<script>
+    // one of the moast famous libraries in Js is jQuery and the idea behind it is 
+    // that it lets you make js much easier by making the code simpler
+    // because jQuery is a js library one should not be intimedated by  & it can be 
+    // learned in half an hour
+    // although jQuery is one of the most famous libraries in js its deminished
+    // in the past few years due to the appearance of js frameworks like: viewjs, 
+    // reactjs & angularjs
+    // they cover much of the things that jQuery covers
+    // but that doesnt mean that jQuery has become extinct it hasnt and is still
+    // used to a large degree and it is important to become familiar with it
+    // specifically because learning jQuery doesn't really take alot of time
+    // if you write jQuery in google a link will be provided to the official website
+    // a repository showing how jQuery was built can also be found because it is open
+    // source
+    // in the official website a brief explanation can be found along with download
+    // link on the left corner 
+    // because cdn package manager is the simplest option to add to your code and 
+    // use the teacher went for latest release 3.x also he went for it because
+    // it says slim minified which apparently means the easiest to use
+    // above is the cdn link that was above the link is incorporated into script tag
+    // after the title tag this is called importing the library
+    // inodrer to make sure that the library has been imported properly you open the 
+    // inspector in chrome and after selecting console there is a space where code can
+    // be tested.the teacher then teste dthe $ to that is a function in jQuery and the
+    // result showed a function thaht wqs conformation that the jQuery library has been
+    // imported properly 
+    // document.getElementById("text").innerHTML = "hello tttttt"
+
+    // $("#text").html("welcome to ttt channel")
+    // te result of this would be writing "welcome to ttt channel" in the html
+    // notice how thw the code is much shorter bellow is another exmple:
+
+    document.getElementById("text").addEventListener("click", function(){
+        this.innerHTML = "hello tttt"
+    })
+
+    // $("#text").click(function(){
+    //     $(this).html("welcome to ttttt channel")
+    // })
+    
+    // the above jQuery code is identical to the code above it but uses less 
+    // syntax
+
+    // the next code does the same but with a double click instead of a click:
+
+    // $("#text").on("dblclick", function(){
+    //     $(this).html("welocme to tarmeez channel")
+    // })
+
+    // there are also many more events that you can use and benefit from 
+    // the part that was covered here is a small part but it is the most
+    // widely used in projects that use jQuery in general
+</script>
+
+</html>

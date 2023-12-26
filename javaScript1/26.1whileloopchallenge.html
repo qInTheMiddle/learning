@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center; font-size: 50px">
+        <div>
+            Find Student
+            <br>
+            <input id="student-input" type="text">
+            <button id="search">Search</button>
+        </div>
+
+        <div id="school" style="font-size: 20px"></div>
+        <h2 id="result"></h2>
+</body>
+
+<script>
+    // turn lesson 25 to while loop
+    var school = ["T.Tmrjn", "T.Hmdhasspoken", "Thisistheway", "Khisoosfkhristos", "Yahhwahoo"]
+    var memberIndex = 0
+    while (memberIndex < school.length){
+        document.getElementById("school").innerHTML += school[memberIndex] + " -- "
+        memberIndex = memberIndex + 1
+    }
+    // /*the first for loop*/
+        // for (var memberIndex = 0; memberIndex <= school.length - 1; memberIndex++){
+    //     document.getElementById("school").innerHTML += school[memberIndex] + " -- "
+    // }
+
+    document.getElementById("search").addEventListener("click", function(){
+        var name = document.getElementById("student-input").value.toLowerCase()
+        var student = 0
+        // var loweredStudent = student.toLowerCase()
+        do {
+            
+            if (name != loweredStudent){
+        
+    
+        document.getElementById("result").innerHTML = `${name} is in the school`
+            
+        student += 1
+
+    }
+    }while (student <= school.length - 1){
+
+        document.getElementById("result").innerHTML = `${name} is not in the school`
+    }
+    //  /*the second for loop:*/   
+        //     for (var student of school){
+            
+        //     var loweredStudent = student.toLowerCase()
+        //     document.getElementById("result").innerHTML = `${name} is not in the school`
+
+        //     if (name != loweredStudent){
+        //         continue
+        // } 
+
+// document.getElementById("result").innerHTML = `${name} is in the school`
+    //     break
+    // }
+})
+
+</script>
+
+</html>

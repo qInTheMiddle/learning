@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="students" style="font-size: 40px;"></div>
+</body>
+
+<script>
+    // before we start it is important to mention that many begginer students strugle
+    // with this topic{nested loops with 2d arrays}  
+    var students = [
+        ["hspls", "zmbald", "khisos"],
+        ["khristos", "jsfc", "areyououtofyourmuthafuckinmindmothafucka"],
+        ["shhaizin", "taizin", "laisin"],
+        ["whendidyouenslave", "theywerefree", "whentheirmothersgavebirthtothem"]
+    ]
+
+    for (var i = 0; i < students.length; i++){
+        console.log(students[i])
+        // the for += is that values are not replaced in every loop but rather
+        // the new value added to the ones in the last loop
+
+        document.getElementById("students").innerHTML += "class" + (i + 1) + "<br>" + students[i] + "<br>"
+    }
+    // document.getElementById("students").innerHTML = "class 1 <br>" + students[0] + "<br> class 2 <br>" + students[1] + "<br> class 3 <br>" + students[2] + "<br>"
+</script>
+
+</html>

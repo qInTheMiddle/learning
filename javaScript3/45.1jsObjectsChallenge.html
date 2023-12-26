@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; background: blue; height: 1000vh; transition: all 0.5s">
+        <table id="student" style="color:white">
+            <tr >
+                <th>Name</th>
+                <th>Age</th>
+                <th>Year</th>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+<script>
+    // printout the obects into an html table that automaticaly updates when you add 
+    // or delete an object from the array
+    var students = [
+        {
+        name: "kkkk", 
+        age: 15, 
+        year: 2000
+        }, 
+        {
+        name: "aaaa", 
+        age: 15, 
+        year: 2002
+        }, 
+        {
+        name: "ssss", 
+        age: 15, 
+        year: 2010
+        }, 
+        {
+        name: "zzzzz", 
+        age: 15, 
+        year: 2010
+        }
+    ]
+
+    for (var i = 0; i < students.length; i++){
+        document.getElementById("student").innerHTML += `<tr> <th> ${students[i].name} </th> <th> ${students[i].age} </th> <th> ${students[i].year} </th> </tr>`
+    }
+
+
+</script>
+
+</html>

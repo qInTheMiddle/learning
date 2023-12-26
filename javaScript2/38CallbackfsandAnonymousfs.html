@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+   
+
+    function test(x,c,d,f){
+        console.log("hi")
+    }
+
+    var x = test
+  
+    x()
+    var y = function(){
+        console.log("hi from y")
+    }
+
+
+    function callAnotherFunction(functionToCall){
+        console.log("getting ready to call another function")
+        functionToCall()
+    }
+
+   
+
+    // below is a function that is used the choose a specific time 
+    // for implementation of function
+    // setTimeout(function (){
+    //     console.log("hello world")
+    // } , 3000)
+
+    // setInterval(function(){
+    //     console.log("Hamoud Channel")
+    // }, 3000)
+
+    var arr = [20, 40, 30, 90]
+
+    arr.forEach(function(element){
+        console.log(element * 20)
+    })
+
+    // hmm interesting
+</script>
+
+</html>

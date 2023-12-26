@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // functions could be considered datatypes of their own kind
+    // function test(){
+    //     console.log("hi")
+    // }
+
+    function test(x,c,d,f){
+        console.log("hi")
+    }
+
+    var x = test
+    // var y = test()
+    x()
+    var y = function(){
+        console.log("hi from y")
+    }
+
+    // y()
+
+    // var str = "hello world"
+    // console.log(str.length)
+
+    // console.log(y.name)
+    // console.log(x.name)
+    // console.log(x.length)
+
+    function callAnotherFunction(functionToCall){
+        console.log("getting ready to call another function")
+        functionToCall()
+    }
+
+    // callAnotherFunction(y)
+
+    callAnotherFunction(function(){  /* this is the anonymous function*/
+        console.log("hello")
+    })
+    // there are many benifits to this method of invoking functions inside others
+    // and there are many functions in js that support this method that can help you 
+    // pefrom many tasks 
+    // there will also be many cases in the future where i will need use functions
+    // that can use other functions as parameters
+    // there will be examples of such cases in the future
+
+</script>
+
+</html>

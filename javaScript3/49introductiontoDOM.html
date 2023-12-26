@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // Linking Js to HTML and using Js to panipulate HTML
+    // the HTML DOM Tree of Objects
+    // Document Object Model (DOM)
+    // The HTML DOM Tree of Objects each one of the following is a node
+    // 
+    //                   Document
+    //                 Root element:
+    //                    <html>
+    // 
+    // Element:                            Element:
+    // <head>                               <body>
+    // 
+    // Element:                   Attribute:    Element:       Element:
+    // <title>                      "href"        <a>            <h1>
+    // 
+    // Text:                                      Text:          Text:
+    // "My title"                               "My link"      "My header"
+    // when bringing html or body or head through js we are bringing a node
+    // the purpose of DOM is to make it easier for programming langauages to reach 
+    // the visible content of the page that is built using html and html tags
+    // the above division of HTML is represented in Js so that we can control
+    // the content of the page
+    // document is a variable that contains a huge amount properties(variables) and 
+    // behaviours(functions)
+    // The tree above exists as an object in Js that has variables and objects that
+    // help us access different parts of the page and different HTML tags and control
+    // them through Javascript
+    // document is a Js object with variables and functions that allow access to the 
+    // nodes illustrated in the HTML DOM tree of Objects
+    // Example:
+    document.getElementById("demo").innerHTML = "Hello World!"; 
+    // document represents the HTML page
+    // an object within the document object that has the innerHTML property
+    // this is an introduction to linking Js to HTML
+</script>
+
+</html>

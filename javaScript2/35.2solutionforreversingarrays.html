@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // the naming method in js with capitals infront of each word is called: 
+    // camel cased
+    function reverseArray(arr=[20, 10, 50, 60]){
+        var outputArray = []
+        for (element of arr){
+            outputArray.unshift(element)
+        }
+        // console.log(arr)
+        // console.log(outputArray)
+
+    return outputArray
+    }
+
+    var myArray = ["hello", "hi", true, false, 20, 50]
+    var reversedArray = reverseArray(myArray)
+    console.log(reverseArray(myArray))
+    console.log("the reverse is " + reversedArray)
+
+    var arr2 = [10, 20, 30]
+    console.log("the second reverse is " + reverseArray(arr2))
+    // well he did unshift() function so i dont know how he created reverse()
+    // but overall its good for revising the array lessons
+
+</script>
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- EXTERNAL LIBRARIES -->
+    <!-- font library -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajwal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet" -->
+    <!-- icon library -->
+    <!-- <link rel="stylessheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />     -->
+
+    <style>
+        body {
+            background-color: rgb(30, 0, 77);
+            /* font-family: 'Tajawal', sans-serif; */
+        }
+        .task {
+            display: flex;
+            background-color: white;
+            padding: 4px;   
+            border-bottom: solid black 1px;
+            transition: box-shadow 0.2s;
+        }
+
+        .task:hover {
+            box-shadow: 0px 3px 15px rgba(97, 97, 97, 0.843);
+        }
+        .tasks-table {
+            background-color: rgb(239, 239, 239);
+            width: 60%;
+            /* height: 500px; */
+            margin-top: 130px;
+        }
+
+        button {
+            border: none;
+            font-size: 20px;
+            box-shadow: 0px 3px 5px rgba(168, 168, 168, 0.38);
+        }
+        button.circular {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            /* this is to diplay the icon in the middle of the button */
+            line-height: 0;
+    }
+    </style>
+</head>
+<body>
+    <div style="direction: rtl">
+        <!-- center div -->
+        <div style="display: flex; justify-content: center; align-items: center">
+            <!-- tasks table -->
+            <div class="tasks-table">
+                <!-- HEADER -->
+                <div style="width: 100%; text-align: center; background: rgb(92, 52, 155); color: white; padding-top: 8px; padding-bottom: 8px">
+                    <h1 style="display: inline">My tasks</h1>
+                    <button id="add-btn" class="circular" style="float: right; background: white; margin-right: 10px;">
+                        <!-- <span class="material-symbols-outlined">
+                            add
+                        </span> -->add
+                    </button>
+                </div>
+                <!-- //HEADER -->
+
+                <!-- tasks -->
+                <div id="tasks" style="padding: 20px">
+                   
+                    <!-- task -->
+                    <div class="task">    
+                    </div>
+                    <!-- //task -->
+
+                    <!-- task -->
+                    <div class="task">    
+                    </div>
+                    <!-- //task -->
+
+                    <!-- task -->
+                    <div class="task">    
+                    </div>
+                    <!-- //task -->
+
+                    <!-- task -->
+                    <div class="task">    
+                    </div>
+                    <!-- //task -->
+
+                                
+                    
+                </div>
+                <!-- //tasks -->
+            </div>        
+            <!-- //tasks table -->
+        </div>
+        <!-- // cneter div -->
+    </div>
+</body>
+
+<script>
+
+
+
+    let tasks = [
+        {
+            "title": "reading a book",
+            "date": "15/10/2030",
+            "isDone": false
+
+        },
+        {
+            "title": "finishing the final project",
+            "date": "15/10/2030",
+            "isDone": false
+
+        },
+        {
+            "title": "finishing js",
+            "date": "15/10/2030",
+            "isDone": false
+
+        },
+        {
+            "title": "solving the challenge",
+            "date": "12/10/2040",
+            "isDone": true
+        }, 
+        
+    ]
+
+    function fillTasksOnThePage(){
+        document.getElementById("tasks").innerHTML = ""
+
+        let index = 0
+        for(task of tasks){
+
+        let content = 
+        
+        `
+    
+            <!-- task -->
+            <div class="task">
+                <!-- TASKS INFO -->
+                <!-- <div style="width: 70%; background-color: white"> -->
+                <div style="width: 70%;">
+                    <h2>${task.title}</h2>
+
+                       <div>            
+                        <!-- <span class="material-symbols-outlined">
+                            calender_month
+                        </span> -->
+                    <!-- date info -->
+                        <span>
+                        ${task.date}
+                        </span>
+                    <!-- // date info -->
+                    </div>
+                </div>
+                <!-- // TASKS INFO -->
+
+                <!-- TASKS ACTIONS -->
+                <!-- <div style="display: flex; justify-content: space-between; align-items: center; background-color: antiquewhite; width: 20%"> -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 20%;">
+                    <button onclick="deleteTask(${index})" class="circular" style="background-color: rgb(114, 0, 0); color: white">
+                        <!-- the <span> below will not work because the library it belongs to was not
+                            imported -->
+                         <!-- <span class="material-icons">delete</span>     -->
+                         <!-- the next <span> will work because it is included
+                             in the library we import-->
+                         <!-- <span class="material-synbols-outlined">
+                             delete
+                        </span> -->d
+                    </button>
+
+                    <button class="circular" style="background-color: rgb(0, 150, 30); color: white">
+                        <!-- <span class="material-synbols-outlined">
+                            done
+                        </span> -->
+                        c</button>
+
+                    <button class="circular" style="background-color: rgba(0, 10, 197, 0.692); color: white">
+                        <!-- <span class="material-synbols-outlined">
+                            edit
+                        </span> -->
+                        e</button>
+
+                </div>
+                 <!-- // TASKS ACTIONS -->
+            </div>
+            <!-- //task -->
+
+        `
+
+        document.getElementById("tasks").innerHTML += content
+        index++
+        
+    }
+
+    }
+
+    fillTasksOnThePage()
+
+    document.getElementById("add-btn").addEventListener("click", function(){
+            // alert("Ttttt")
+            // alert is used to test the click event listener
+            console.log(Date())
+
+            let now = new Date()
+            let date = now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear() + " | " + now.getHours() + ":" + now.getMinutes()
+            let taskName = prompt("please enter the title of the task")
+
+            
+
+            let taskObj = {
+                "title" : taskName,
+                "date" : date,
+                "isDone" : false
+
+            }
+            // console.log(taskName)
+            // tasks.push(taskName)  
+            console.log(taskObj)
+            tasks.push(taskObj)
+            fillTasksOnThePage()
+        })
+
+    // the first challenge when wanting to create a delete button is differentiating
+    // the different buttons from each other
+    // the teacher then floated the idea of trying to find the index when clicking 
+    // the delete button and accordingly delete the task with the index 
+    // we can can transform this idea into code using function and then invoking the
+    // function when clicking the button with a parameter and this parameter would 
+    // be th eindex 
+    // this would be done using the an event listener in this case onclick eventlistener
+    // that would invoke the suggested function
+    // all of this should br done inside the for loop that is inside the fillTaskOnPage() 
+    // function inside the delete button htnl part using the onclick attribute in html
+    // we do this because if we use id we will not be able to target all delete buttons
+    // of an html part that is being generated continuesly using a for loop meaning that
+    // ids cant be used in that way
+    // figuring out the index part is half the solution already
+    // to do this we must first define a function:
+
+    function deleteTask(index){
+        let task = tasks[index]
+        let isConfirmed = confirm("Are you absolutely sure that want to delete: " + task.title)
+        console.log(isConfirmed)
+        if (isConfirmed == true){
+
+        
+        
+        // alert(index)
+        // splice has two parameters one is the index the second how many to 
+        // delete starting from the index
+        tasks.splice(index, 1)
+        // after this nothing will happpebn automatically because the change in the 
+        // programmatic representation hasn't been reflected on the visual representation 
+        // to reflect the change on the visual representation we must invoke the function
+        // that updates the visual representation:
+        fillTasksOnThePage()
+        // After we are successful in deleting the task the last thing to add would be the 
+        // confirmation of deletion because deleting without confrimation is not a good 
+        // practice
+        // like alert() and prompt() there is also confirm() for confirmation
+        }
+    }
+
+    // cool cool cool
+    
+</script>
+
+</html>
+
+
+

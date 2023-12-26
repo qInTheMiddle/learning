@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // the out put of this challenge should be without using reverse() 
+    // the followingin the console:
+    // (7) [9, 1, 5, 7, 10, 'hello', true]
+    // (7) [true, 'hello, 10, 7, 5, 1, 9']
+
+    function reverseArray(arr=[9, 1, 5, 7, 10, 'hello', true]){
+        var rev = [9, 1, 5, 7, 10, 'hello', true]
+        rev[0] = arr[6]
+        rev[1] = arr[5]
+        rev[2] = arr[4]
+        rev[3] = arr[3]
+        rev[4] = arr[2]
+        rev[5] = arr[1]
+        rev[6] = arr[0]
+        
+        var arrMirror = [arr, rev]
+        return arrMirror
+    }
+
+    console.log(reverseArray())
+
+</script>
+
+</html>

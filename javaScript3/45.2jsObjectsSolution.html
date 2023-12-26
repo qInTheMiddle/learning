@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid white;
+            text-align: center;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: rgb(60, 0, 60)">
+        <table id="students" style="color: white">
+            <tr style="width: 50%; font-size: 50px; ">
+                <th>Name</th>
+                <th>Age</th>
+                <th>Year</th>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+<script>
+
+    let students = [
+            {
+                firstName: "kkkk",
+                lastName: "oooo",  
+                age: 15, 
+                year: "2000", 
+             
+
+                printFullName: function(){
+                console.log(this.firstName + " " + this.lastName)
+                }
+            }, 
+            {
+                firstName: "aaaa",
+                lastName: "oooo",  
+                age: 15, 
+                year: "2002", 
+                 
+
+                printFullName: function(){
+                console.log(this.firstName + " " + this.lastName)
+                }
+            }, 
+            {
+                firstName: "ssss",
+                lastName: "oooo",  
+                age: 15, 
+                year: "2010", 
+                 
+
+                printFullName: function(){
+                console.log(this.firstName + " " + this.lastName)
+                }
+            } 
+
+        ]
+
+        // console.log(students[0].printFullName())
+        for (st of students){
+            // console.log(st.firstName, st.age, st.year)
+            let content = `<tr> 
+                             <td>${st.firstName}</td> 
+                             <td>${st.age}</td> 
+                             <td>${st.year}</td> 
+                           </tr>`
+            document.getElementById("students").innerHTML += content
+        }
+
+</script>
+
+</html>

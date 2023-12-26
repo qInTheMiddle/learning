@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center; font-size: 30px;">
+        Find Student <br>
+        <input id="name-input" type="text">
+        <button id="submit">Submit</button>
+        <h2 id="result"></h2>
+    </div>  
+</body>
+
+<script>
+    var school = ["T.Tmrjn", "T.Hmdhasspoken", "Thisistheway", "Khisoosfkhristos", "Yahhwahoo"]
+    document.getElementById("submit").addEventListener("click", function(){
+        document.getElementById("result").innerHTML = ``
+        var name = document.getElementById("name-input").value
+        console.log(name)
+        for (var sn = 0; sn < school.length; sn++){
+            if (name == school[sn]){
+                document.getElementById("result").innerHTML = `${name} is a student`
+                break
+            } 
+        
+            
+                document.getElementById("result").innerHTML = "nope"
+            
+            
+        }
+    })
+    // so it apears that the problem is that the for loop only displays the last result
+</script>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center; font-size: 30px;">
+        Vowel Letters: (A, E, I, O, U) <br>
+        <input id="string-input" type="text">
+        <button id="submit">Submit</button>
+        <h2 id="result"></h2>
+    </div>  
+</body>
+
+<script>
+    document.getElementById("submit").addEventListener("click", function(){
+        // the folowing step is important
+        document.getElementById("result").innerHTML = ``
+        var text = document.getElementById("string-input").value
+        console.log(text)
+        var vowels = ["a", "e", "i", "o", "u"]
+        for (var char of text){
+            // char = char.toLowerCase()
+            var loweredChar = char.toLowerCase()
+            if (!vowels.includes(loweredChar)){
+                document.getElementById("result").innerHTML += `${char} <br>`
+            } 
+            // if (loweredChar != "a" && loweredChar != "e" && loweredChar != "i" && loweredChar != "o" && loweredChar != "u"){
+            //     document.getElementById("result").innerHTML += `${char} <br>`
+            // } 
+            //  if (char != "a" && char != "e" && char != "i" && char != "o" && char != "u"){
+            //     document.getElementById("result").innerHTML += `${char} <br>`
+            // } 
+
+            // if (char == "a" || char == "e" || char == "i" || char == "o" || char == "u"){
+
+            // } else {
+            //     document.getElementById("result").innerHTML += `${char} <br>`
+            // }
+            
+        }
+       
+    })
+    // the answer was so stupid it pissed me off
+    // but as it apears i was right but just could find the answer
+    // the teacher seaerched for how to check if element is in array
+    // the result was the same one i found: includes()
+    // the problem is that i didint know how to use properly
+    // as we can see grammer ris not important in js
+</script>
+
+</html>

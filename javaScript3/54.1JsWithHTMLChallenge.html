@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; color: white; width: 100%; height:50vh; background-color:blue">
+        <input id="name-input"/>
+        <button id="insert-name">insert</button>
+        <h2 id="type-name"></h2>
+    </div>
+    <div id="name" style="width: 100%; height:50vh; color: black; display: flex; justify-content: center; align-items: center">
+        <!-- <h2  style=""></h2> -->
+    </div>
+</body>
+
+<script>
+    // using appendChild is a requirement for this challlenge
+    let input = document.getElementById("name-input")
+    let getInputValue = () => /*document.getElementById("name-input")*/input.value
+    // console.log(input)
+    /*document.getElementById("name-input")*/input.addEventListener("input", function(){
+        // let getInputValue = () => /*document.getElementById("name-input")*/input.value
+        document.getElementById("type-name").innerHTML = getInputValue()
+        // let h2Element = document.createElement("h2")
+        // let textContent = document.createTextNode(getInputValue())
+ 
+    })
+
+    document.getElementById("insert-name").addEventListener("click", function(){
+            
+        let h2Element = document.createElement("h2")
+        let textContent = document.createTextNode(getInputValue())
+        h2Element.appendChild(textContent)
+            
+        document.getElementById("name").appendChild(h2Element)
+
+        document.getElementById("name").addEventListener("mouseover", function(){
+
+            h2Element.style.backgroundColor = "red"
+        
+    })
+
+    document.getElementById("name").addEventListener("mouseout", function(){
+
+h2Element.style.backgroundColor = "white"
+
+})
+     
+    })
+
+    
+
+        
+  
+</script>
+
+</html>

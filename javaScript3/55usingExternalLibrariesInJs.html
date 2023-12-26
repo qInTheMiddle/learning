@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <div style="display: flex; justify-content: center; align-items: center">
+        <div id="obj" style="width: 400px; height: 200px; background-color: purple">
+
+        </div>
+    </div>
+
+</head>
+<body>
+    
+</body>
+
+<script>
+    // using libraries of other programmers is a necessity 
+    // one example is the calender library
+    // libraries can have some of what you want ready but will never have exactley everyhting you
+    // want so you will have to specify the library in order to alter what it can provide
+    // to be suitable for you
+    // Js libraries have documenation that helps the programmers to know how to modify
+    // libraries and use them specifically for their needs
+    // as an average 30% of code you be able to use libraries and 70% you will have
+    // to write the code yourself the final project will be the result of putting the 
+    // two pieces together
+    // it nearly impossible to find everything you want in libraries so you must have
+    // experience in: 1- using libraris  2- coding inorder to be bale to use these libraries
+    // downloading them link them to your project and add the propertes you want to them
+    
+    // Two main sources for finding and downloading libraries:
+    // 1- google: us ethe name of the library or the topic or the title you want the library
+    // to be specialized in then write javascript to specify the language you want it in
+    // 2- one of the biggest opensource source of libraries github 
+    // in the search bar on the top left corner type name or topic or title
+    // 2.1-when you get the results te first thing you must check for is the programming
+    // language
+    // 2.2 then you must check the number of stars it has to show if programmers like 
+    // this library because it cause an indication on he capabilities of this library
+    // and the amount of updats that happen in the library 
+    // sometimes when there is many problems the developers have to address them and
+    // fix them in updates so that you can benefit from th esolutions to the problems
+    // with libraries that have less than a thousand users there using 
+    // them is risky therefore the decision to use them is up to you (the programmer)
+    // one good example of a good library is anime.js
+    // It is important to read and understand the concepts and ideas documention 
+    // provided in the front page when selecting any library. this is common in most 
+    // libraries weather javascript or not 
+    // there will also be a getting started section in the front page that will
+    // include download and usage sections that will help you install the library 
+    // and incorporate it your project 
+    // you must know how to download the library and how to use it
+    // understanding the library by looking at the code is very hard therefore 
+    // documentation is very important to help you undrestand 
+    // how it works and what the main functions are and how to use them
+    // a package manager is helpful for downloading library in pls generaly
+    // and it is the official way for downloading libraries that programmers are used
+    // to 
+    // one of the most famous package managers is npm
+    // cdn is also another famous package manager that is the easiest to use and and 
+    // only requires one download for the whole library that the teacher will be using 
+    // it for the duration of the course
+    // if the download section of the front page doesn't mention anything about 
+    // downloading the cdn package manager then you can always look it up on google
+    // cdnjs website is a good example of a website that provides cdn packages
+    // the teacher used the example of downloading animejs 
+    // cdn is a link that can take and include in the project as part of an outside 
+    // script
+    // many versions of the library will be available to choose from
+    // the link is copied and usually pasted in the head section the teacher 
+    // copied and pasted it after the title section and before the style section
+    // obviously the link is not pasted directly but by using a src="" attribute in
+    // the script tag 
+    // after that it is as if all the code of the library animejs library are available
+    // in the code
+    // for usage part npm is different from cdn in that it requires importing and 
+    // instalation but the cdn doesn't
+    // if the link is copied and pasted in a webbrowser the result would be a large 
+    // bulk of code grouped together that exists in a server somewhere
+    // usually in the getting started section of the front there will be some lines
+    // of code to help you understand for you to test like a function in the case of
+    // animejs library this function is copied and pasted in the script section that
+    // follows the body section to test bellow is a demonstration: 
+
+    // anime({
+    //     targets: 'div', 
+    //     translateX: 250, 
+    //     rotate: '1turn', 
+    //     backgroundColor: '#FFF', 
+    //     duration: 800
+    // });
+
+    // anime({
+    //     targets: '#obj', 
+    //     translateX: 250, 
+    //     rotate: '1turn', 
+        // backgroundColor: '#FFF', 
+    //     duration: 800
+    // });
+
+    // the result of this will be the purple section of the screen moving animation
+    // the parameters can be changed as well if the background is disable here the
+    // animation can be seen more clearly
+    // in the main page the documentation can be seen with many sections but for most
+    // of the libraries the main source is their web site and usually a link will be 
+    // provided in the front page next to the icon although there is documentation in
+    // the repository section of the front page in github but the better ordered 
+    // documaenation can be found in the libraries website if the library is well
+    // known and has support
+    // anime js has good explanation in the documentation part that shows the input 
+    // and the result clearly
+
+    // the teacher copied an attribute that wasnt available in github documantation
+    // and available in the animejs library website website and the result was change
+    // in the shape of the animation
+
+    
+    anime({
+        targets: '#obj', 
+        translateX: 250, 
+        rotate: '1turn', 
+        // backgroundColor: '#FFF', 
+        borderRadius: ['0%', '50%'], 
+        duration: 800
+    });
+
+    // the purpose of the lesson is not to teach about anime js but to teach about
+    // libraries in general and familiarize the students with the use of libraries
+    // the purpose is to be able to work seperately fro the teacher and be able to find 
+    // the information on your own and this is achieved by visiting the documentation
+    // part of libraries frequentky 
+    // this is the general concept that needs to be understood in order to use external
+    // libraries 
+
+</script>
+
+</html>

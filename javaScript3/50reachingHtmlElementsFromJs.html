@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <h3 id="title" class="title">Hello World</h3>
+    <h3 id="title" class="title">Hello tttt</h3>
+    <h3 id="title" class="title">tttt channel</h3>
+    <h3 id="title" class="title">Hello World</h3>
+    <h3 id="title" class="title">Hello tttt</h3>
+    <h3 id="title" class="title">tttt channel</h3>
+    <style>       
+    </style>
+</head>
+<body>
+    
+</body>
+
+<script>
+    let elm1 = document.getElementById("title")
+    let elm2 = document.getElementsByClassName("title")
+
+    // console.log(elm1)
+    // console.log(elm2)
+    
+    // ids should only be used for one tag per id not multiple  
+    // document.getElementById("title").innerHTML = "Welcome To tttt Channel";
+    // document.getElementsByClassName("title")[2].innerHTML = "welcome"
+    // let x = document.getElementsByTagName('h3')[0].innerHTML = "Hello World"
+
+    // console.log(x)
+    document.getElementsByTagName("h3")[1].innerHTML = "Llllll" 
+
+    for (element of document.getElementsByTagName("h3"))
+    {
+        element.innerHTML = "Hi"
+    }
+    // these are the most commonly used methods for accessing HTML through Js
+
+</script>
+
+</html>

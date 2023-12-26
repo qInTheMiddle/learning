@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    var arr = [10, 20 , 30, 40, 50]
+
+    // var myArray = []
+    // for (element of arr){
+    //     myArray.push(element*10)
+    // }
+    // console.log(myArray)
+    // .map(function(){}) alows alteration of all array values at once this is how it is written:
+
+    // let myArr = arr.map(function(element){
+    //     return element * 10
+    // })
+
+    // console.log(myArr)
+
+    // .filter(function(){}) allows filteration of all array values at once
+
+    // let myArr = arr.filter(function(element){
+    //     // if (element > 35){
+    //     //     return true
+    //     // }else {
+    //     //     return false
+    //     // }
+    //     return element > 35
+    // })
+    // console.log(myArr)
+
+    // .reduce(function(){}) can be used to perform an arethmetic operation on all array
+    // values at once and return one value as the result
+    // the anonymous function in .reduce(function(){}) must contain two parameters
+    // that represent the values of an element in the array and the value the 
+    // element that follows
+
+
+    var total = arr.reduce(function(prevValue, currentValue){
+        return prevValue + currentValue
+    })
+    console.log(total)
+
+</script>
+
+</html>

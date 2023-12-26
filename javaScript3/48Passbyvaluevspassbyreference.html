@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // when assigning by value the value is copied into two different values
+    // let x = "hi"
+    // let y = x
+    // x = "ttttt"
+      
+    // when assigning by reference the value is looked up in the memory instead simply
+    // copying the value and there is no seperation of values
+    // two variables with the same value
+    let x = {
+        name: "kkk"
+    }
+    let y = x
+
+    x.name = "yyy"
+
+    console.log("the value if x is: " , x)
+    console.log("the value if y is: " , y)
+    // Object and array values are passed by referrence 
+    // the rest are passed by value 
+
+    var w = ["hello"]
+    var z = w
+    w.push("hi")
+    console.log("the  w value is", w)
+    console.log("theh z value is", z)
+</script>
+
+</html>

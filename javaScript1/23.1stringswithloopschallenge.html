@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="vowls" style="text-align: center;"></div>
+    <div style="text-align: center; margin-top: 100px">
+        <input type="text" id="letters-input">
+        <button id="add-letters-btn">Submit</button>
+        <div id="consonants" style="font-size: 30px;"></div>
+    </div>
+</body>
+
+<script>
+    // (A,E,I,O,U) are vowls
+    var consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+    var letters = ""
+    document.getElementById("add-letters-btn").addEventListener("click", function(){
+        console.log("adding")
+        letters = document.getElementById("letters-input").value
+        console.log(letters)
+        for (var i of letters){
+        console.log(i)
+        document.getElementById("consonants").innerHTML = `${i.includes(consonants)} <br>`
+        // if (i.includes(consonants) == true) {
+        //     document.getElementById("consonants").innerHTML = `${i.includes(consonants)} <br>`
+        //     console.log(i.includes(consonants))
+        // }
+        // else {
+        //     document.getElementById("consonants").innerHTML = "no consonants"
+        // } 
+        } 
+    })
+    
+        
+
+
+    // the function .includes() will have to be used
+    // im now tired so moving on
+</script>
+
+</html>

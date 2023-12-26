@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: rgb(255, 120, 221)
+        }
+        .book {
+            display: flex;
+            background-color: white;
+            padding: 4px;
+            border-bottom: solid black 1px;
+        }
+        .books-list {
+            background-color: rgb(239, 239, 239);
+            width: 60%;
+            height: 500px;
+            margin-top: 130px;
+        }
+
+        button {
+            border: none;
+            font-size: 20px;
+            box-shadow: 0px 3px 5px rgba(160, 168, 168, 0.38);
+        }
+
+        button.circular {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+
+        }
+    </style>
+</head>
+<body>
+    <div style="direction: ltr">
+        <!-- CENTER DIV -->
+        <div style="display: flex; justify-content: center; align-items: center">
+            <!-- BOOKS LIST -->
+            <div class="books-list">
+                <!-- HEADER -->
+                <div style="width:100%; text-align: center; background-color: rgb(124, 124, 124); color: white; padding-top: 8px; padding-bottom: 8px">
+                    <h1 style="display: inline">available books</h1>
+
+                    <button class="circular" style="float: left; background: white; margin-left: 10px">
+                        add
+                    </button>
+                    <button class="circular" style="float: right; background: white; margin-right: 10px">
+                        search
+                    </button>
+                </div>
+                <!--// HEADER //-->
+
+                <!-- BOOKS -->
+                <div class="books" style="padding: 20px">
+                    <!-- BOOK -->
+                    <div class="book">
+
+                        <!-- BOOKS INFO -->
+                        <div style="width: 70%;">
+                            <h3>for dummies</h3>
+                            <p>dummy</p>
+                            <p>programming</p>
+                            <p>1987</p>
+                            <p>30</p>
+
+                            <div>
+
+                                <span>
+                                    10/10/2030
+                                </span>
+                            </div>
+                        </div>
+                        <!--// BOOKS INFO //-->
+
+                        <!-- BOOKS ACTIONS -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 20%;">
+                            <button class="circular" style="background-color: rgb(114, 0, 0); color: white">D</button>
+
+                            <button class="circular" style="background-color: rgba(0, 16, 197, 0.692); color: white">E</button>
+                        </div>
+                        <!--// BOOKS ACTIONS //-->
+                    </div>
+                    <!--// BOOK //-->
+                </div>
+                <!--// BOOKS //-->
+            </div>
+            <!--// BOOKS LIST //-->
+        </div>
+        <!--// CENTER DIV //-->
+    </div>
+</body>
+</html>

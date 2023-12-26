@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- EXTERNAL LIBRARIES -->
+    <!-- font library -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajwal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet" -->
+    <!-- icon library -->
+    <!-- <link rel="stylessheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />     -->
+
+    <style>
+        body {
+            background-color: rgb(30, 0, 77);
+            /* font-family: 'Tajawal', sans-serif; */
+        }
+        .task {
+            display: flex;
+            background-color: white;
+            padding: 4px;   
+            border-bottom: solid black 1px;
+            transition: box-shadow 0.2s;
+        }
+
+        .task:hover {
+            box-shadow: 0px 3px 15px rgba(97, 97, 97, 0.843);
+        }
+        .tasks-table {
+            background-color: rgb(239, 239, 239);
+            width: 60%;
+            /* height: 500px; */
+            margin-top: 130px;
+        }
+
+        button {
+            border: none;
+            font-size: 20px;
+            box-shadow: 0px 3px 5px rgba(168, 168, 168, 0.38);
+        }
+        button.circular {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            /* this is to diplay the icon in the middle of the button */
+            line-height: 0;
+    }
+    </style>
+</head>
+<body>
+    <div style="direction: rtl">
+        <!-- center div -->
+        <div style="display: flex; justify-content: center; align-items: center">
+            <!-- tasks table -->
+            <div class="tasks-table">
+                <!-- HEADER -->
+                <div style="width: 100%; text-align: center; background: rgb(92, 52, 155); color: white; padding-top: 8px; padding-bottom: 8px">
+                    <h1 style="display: inline">My tasks</h1>
+                    <button class="circular" style="float: right; background: white; margin-right: 10px;">
+                        <!-- <span class="material-symbols-outlined">
+                            add
+                        </span> -->add
+                    </button>
+                </div>
+                <!-- //HEADER -->
+
+                <!-- tasks -->
+                <div class="tasks" style="padding: 20px">
+                    <!-- task -->
+                    <div class="task">
+                        <!-- TASKS INFO -->
+                        <!-- <div style="width: 70%; background-color: white"> -->
+                        <div style="width: 70%;">
+                            <h2>reading a book</h2>
+
+                            <div>            
+                                <!-- <span class="material-symbols-outlined">
+                                    calender_month
+                                </span> -->
+                            <!-- date info -->
+                                <span>
+                                10/10/2039
+                                </span>
+                            <!-- // date info -->
+                            </div>
+                        </div>
+                        <!-- // TASKS INFO -->
+
+                        <!-- TASKS ACTIONS -->
+                        <!-- <div style="display: flex; justify-content: space-between; align-items: center; background-color: antiquewhite; width: 20%"> -->
+                            <div style="display: flex; justify-content: space-between; align-items: center; width: 20%;">
+                            <button class="circular" style="background-color: rgb(114, 0, 0); color: white">
+                                <!-- the <span> below will not work because the library it belongs to was not
+                                    imported -->
+                                <!-- <span class="material-icons">delete</span>     -->
+                                <!-- the next <span> will work because it is included
+                                    in the library we import-->
+                                <!-- <span class="material-synbols-outlined">
+                                    delete
+                                </span> -->d
+                            </button>
+
+                            <button class="circular" style="background-color: rgb(0, 150, 30); color: white">
+                                <!-- <span class="material-synbols-outlined">
+                                    done
+                                </span> -->
+                                c</button>
+
+                            <button class="circular" style="background-color: rgba(0, 10, 197, 0.692); color: white">
+                                <!-- <span class="material-synbols-outlined">
+                                    edit
+                                </span> -->
+                                e</button>
+
+                        </div>
+                        <!-- // TASKS ACTIONS -->
+                    </div>
+                    <!-- //task -->
+
+                                        <!-- task -->
+                    <div class="task">
+                        <!-- TASKS INFO -->
+                        <!-- <div style="width: 70%; background-color: white"> -->
+                        <div style="width: 70%;">
+                            <h2>reading a book</h2>
+
+                            <div>            
+                                <!-- <span class="material-symbols-outlined">
+                                    calender_month
+                                </span> -->
+                            <!-- date info -->
+                                <span>
+                                10/10/2039
+                                </span>
+                            <!-- // date info -->
+                            </div>
+                        </div>
+                        <!-- // TASKS INFO -->
+
+                        <!-- TASKS ACTIONS -->
+                        <!-- <div style="display: flex; justify-content: space-between; align-items: center; background-color: antiquewhite; width: 20%"> -->
+                            <div style="display: flex; justify-content: space-between; align-items: center; width: 20%;">
+                            <button class="circular" style="background-color: rgb(114, 0, 0); color: white">
+                                <!-- the <span> below will not work because the library it belongs to was not
+                                    imported -->
+                                <!-- <span class="material-icons">delete</span>     -->
+                                <!-- the next <span> will work because it is included
+                                    in the library we import-->
+                                <!-- <span class="material-synbols-outlined">
+                                    delete
+                                </span> -->d
+                            </button>
+
+                            <button class="circular" style="background-color: rgb(0, 150, 30); color: white">
+                                <!-- <span class="material-synbols-outlined">
+                                    done
+                                </span> -->
+                                c</button>
+
+                            <button class="circular" style="background-color: rgba(0, 10, 197, 0.692); color: white">
+                                <!-- <span class="material-synbols-outlined">
+                                    edit
+                                </span> -->
+                                e</button>
+
+                        </div>
+                        <!-- // TASKS ACTIONS -->
+                    </div>
+                    <!-- //task -->
+
+                                        <!-- task -->
+                    <div class="task">
+                        <!-- TASKS INFO -->
+                        <!-- <div style="width: 70%; background-color: white"> -->
+                        <div style="width: 70%;">
+                            <h2>reading a book</h2>
+
+                            <div>            
+                                <!-- <span class="material-symbols-outlined">
+                                    calender_month
+                                </span> -->
+                            <!-- date info -->
+                                <span>
+                                10/10/2039
+                                </span>
+                            <!-- // date info -->
+                            </div>
+                        </div>
+                        <!-- // TASKS INFO -->
+
+                        <!-- TASKS ACTIONS -->
+                        <!-- <div style="display: flex; justify-content: space-between; align-items: center; background-color: antiquewhite; width: 20%"> -->
+                            <div style="display: flex; justify-content: space-between; align-items: center; width: 20%;">
+                            <button class="circular" style="background-color: rgb(114, 0, 0); color: white">
+                                <!-- the <span> below will not work because the library it belongs to was not
+                                    imported -->
+                                <!-- <span class="material-icons">delete</span>     -->
+                                <!-- the next <span> will work because it is included
+                                    in the library we import-->
+                                <!-- <span class="material-synbols-outlined">
+                                    delete
+                                </span> -->d
+                            </button>
+
+                            <button class="circular" style="background-color: rgb(0, 150, 30); color: white">
+                                <!-- <span class="material-synbols-outlined">
+                                    done
+                                </span> -->
+                                c</button>
+
+                            <button class="circular" style="background-color: rgba(0, 10, 197, 0.692); color: white">
+                                <!-- <span class="material-synbols-outlined">
+                                    edit
+                                </span> -->
+                                e</button>
+
+                        </div>
+                        <!-- // TASKS ACTIONS -->
+                    </div>
+                    <!-- //task -->
+
+                                        <!-- task -->
+                    <div class="task">
+                        <!-- TASKS INFO -->
+                        <!-- <div style="width: 70%; background-color: white"> -->
+                        <div style="width: 70%;">
+                            <h2>reading a book</h2>
+
+                            <div>            
+                                <!-- <span class="material-symbols-outlined">
+                                    calender_month
+                                </span> -->
+                            <!-- date info -->
+                                <span>
+                                10/10/2039
+                                </span>
+                            <!-- // date info -->
+                            </div>
+                        </div>
+                        <!-- // TASKS INFO -->
+
+                        <!-- TASKS ACTIONS -->
+                        <!-- <div style="display: flex; justify-content: space-between; align-items: center; background-color: antiquewhite; width: 20%"> -->
+                            <div style="display: flex; justify-content: space-between; align-items: center; width: 20%;">
+                            <button class="circular" style="background-color: rgb(114, 0, 0); color: white">
+                                <!-- the <span> below will not work because the library it belongs to was not
+                                    imported -->
+                                <!-- <span class="material-icons">delete</span>     -->
+                                <!-- the next <span> will work because it is included
+                                    in the library we import-->
+                                <!-- <span class="material-synbols-outlined">
+                                    delete
+                                </span> -->d
+                            </button>
+
+                            <button class="circular" style="background-color: rgb(0, 150, 30); color: white">
+                                <!-- <span class="material-synbols-outlined">
+                                    done
+                                </span> -->
+                                c</button>
+
+                            <button class="circular" style="background-color: rgba(0, 10, 197, 0.692); color: white">
+                                <!-- <span class="material-synbols-outlined">
+                                    edit
+                                </span> -->
+                                e</button>
+
+                        </div>
+                        <!-- // TASKS ACTIONS -->
+                    </div>
+                    <!-- //task -->
+                    
+                </div>
+                <!-- //tasks -->
+            </div>        
+            <!-- //tasks table -->
+        </div>
+        <!-- // cneter div -->
+    </div>
+</body>
+
+<script>
+    // external libraries must be used for fonts and icons
+    // one of the most famous options for css icons is font awsome in addition to other
+    // options that have emerged recently
+    // the teacher will rely on google fonts and google icons
+    // after searching in googlefonts many options for fonts are presented
+    // then te language of fonts is selected in his case arabic then he selects tajawal
+    // font
+    // after selecting th efont different measurments can be found on the side of the 
+    // screen that can be cleared then the measurment can be selected from the presented 
+    // styles by clicking on them
+    // then alink is presented below the measurments for you to import 
+    // the link is then pasted below the title tag as shown above however simply pasting
+    // wont achieve anything we must go back to the googleefonts page that we copied
+    // the link from then copy the code below "css rules to specify families" then
+    // then paste in the body part of th style tag so that the font will be for all 
+    // the webage generally
+    // 2- for th icons we search on google for icons then a link will be provided for
+    // Material icons guide for google fonts at developers.google.com there you can find 
+    // a link can be found to the material icon library.
+    // if we click on the link it will take us to where all the icons are 
+    // you can search for the icon or filter te search
+    // the teacher selected the add icon and like the fonts the right side will provide
+    // explanation about how to import the icons and like before first we copy the link
+    // then below the link it says "insert the icon" and explains how to insert it 
+    // notice how thi snot hte same as the code for the font instead of css code
+    // this one has html code. we can then copy and paste the code into the desired button
+    // as shown above
+    // note that the materials icons outlined library that was imported was only the for the outlined
+    // icons so we must be careful because we can only use outlined icons and if we want 
+    // to use icons from other libraries we must import those libraries
+    // changing fonts to better looking ones and using icons makes the webpage look better 
+    // in general 
+    // after using the icons for the button we search for the oultlined calender one 
+    // and we copy the code in the same way and paste it in the task info part below
+    // the h2 description
+    // the next lesson will be the programming logic
+</script>
+
+</html>

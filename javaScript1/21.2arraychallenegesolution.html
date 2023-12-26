@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 100px">
+        <input type="text" id="student-input">
+        <button id="add-student-btn">Submit</button>
+        <button id="delete-student-btn">Delete</button>
+        <div id="students" style="font-size: 30px;"></div>
+    </div>
+</body>
+
+<script>
+    
+    var students = []
+    document.getElementById("add-student-btn").addEventListener("click", function(){
+        console.log("adding")
+        var studentName = document.getElementById("student-input").value
+        console.log(studentName)
+        students.push(studentName)  
+        console.log(students)  
+        document.getElementById("students").innerHTML = students
+        document.getElementById("student-input").value = ""
+
+    })
+    document.getElementById("delete-student-btn").addEventListener("click", function(){
+        console.log("deleting")
+        students.pop()  
+        console.log(students)  
+        document.getElementById("students").innerHTML = students
+
+    })
+</script>
+
+</html>

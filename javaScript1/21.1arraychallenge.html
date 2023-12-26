@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <input type="text" id="new-student">
+        <button id="submit-btn">Submit</button>
+        <button id="delete-btn">Delete</button>
+    </div>
+    <div id="total" style="text-align: center; font-size: 30px"></div>
+</body>
+
+<script>
+    var arr = []
+    document.getElementById("submit-btn").addEventListener("click", function() {
+        console.log("clicked")
+        var newname = document.getElementById("new-student").value
+        console.log(newname)
+        
+        arr.push(newname)
+        console.log(arr)
+        document.getElementById("total").innerHTML = arr
+    })    
+    document.getElementById("delete-btn").addEventListener("click", function() {
+        console.log("clicked")
+        arr.pop()
+        console.log(arr)
+        document.getElementById("total").innerHTML = arr
+        
+    })
+    
+</script>
+
+</html>

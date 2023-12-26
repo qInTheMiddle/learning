@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>hello world</h2>
+    <h3 id=""result></h3>
+
+
+</body>
+  <script>
+// console.log("jsflds") log is a function and parameters are whats inside the brackets
+// var title = "Hello world"
+// the substring function is not inclusive because it doesn't show the letter
+// where the last number is
+// console.log(title.substring(0, 8))
+// title.length shows the length of the string  
+// console.log(title.length)
+// touppercase function turns babies to adults(lowercaser to capital letters) 
+// console.log(title.toUpperCase())
+// replace function replaces letters or words with letters or words 
+// we ca++n also replace the letters regardless weather it is highercase
+// or lowercase of keywords by adding a second var that has the value of 
+// [the first var].toLowerCase() then replacing the first var that log 
+// function is displaying with the second one see below the original way
+// replace was used vs the new one:
+// console.log(title.replace("hello", "r"))
+// var titleLowerCase = title.toLowerCase()
+// console.log(titleLowerCase.replace("hello", "welcome"))
+// the order of letters starts with 0 for the first lwtter 
+// console.log(title.charAt(0)) and space is also a character
+// in js every character is of string datatype but in other pls
+// the individual characters belong to character datatype   
+// var myChar = title.charAt(5)
+// console.log(myChar)
+// console.log(typeof myChar)
+// we can use the[]brackets instead of charat function for index
+// console.log(title[9])
+// var name = " Hamood Channel"
+// console.log(title + " " + name)
+// $ along with {} can be use for inserting A var into a string
+//  with a single `` instead of multiple "" see below:
+// dont try to memorize everything instead use references like w3schools
+// var name = "Mommy"
+// console.log(`Hello ${name}, Welcome To Hamood Channel`)
+var mystr = "Hello World"
+console.log(mystr) 
+var mystrUpperCase = mystr.toUpperCase()
+console.log(mystrUpperCase)
+console.log(mystrUpperCase.replace("O", "Y"))
+function reverseString(str) {
+    const reversedArray = str.split("").reverse();
+    return reversedArray.join("");
+}
+const reversedString = reverseString("HELLY WORLD");
+console.log(reversedString);
+  </script>
+</html>

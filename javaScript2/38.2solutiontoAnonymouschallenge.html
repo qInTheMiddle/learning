@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg" style="display: flex; justify-content: center; align-items: center; background: orange; height: 1000vh; transition: all 0.5s">
+        <button id="startBtn" style="font-size: 22px; width: 300px; height: 100px; border: none; border-radius: 20px; box-shadow: 0px 11px 6px rgba(0, 0, 0, 0.15);">Start</button>
+    </div>
+</body>
+
+<script>
+    document.getElementById("startBtn").addEventListener("click", function(){
+        // console.log("test")
+        // document.getElementById("startBtn").style.backgroundColor = "#234232"
+        // document.getElementById("startBtn").style.backgroundColor = "green"
+        // var randomR = generateRandomNumber()
+        // var randomG = generateRandomNumber()
+        // var randomB = generateRandomNumber()
+        // console.log(randomR, randomG, randomB)
+        // document.getElementById("startBtn").style.backgroundColor = `rgb(35, 199, 100)`
+        // document.getElementById("startBtn").style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
+        
+        // document.getElementById("startBtn").style.backgroundColor = generateRandomRgb()
+        this.style.backgroundColor = generateRandomRgb()
+        setInterval(function(){
+    
+            // var randomR2 = generateRandomNumber()
+            // var randomG2 = generateRandomNumber()
+            // var randomB2 = generateRandomNumber()
+
+            // document.getElementById("bg").style.backgroundColor = `rgb(${randomR2}, ${randomG2}, ${randomB2})`
+            document.getElementById("bg").style.backgroundColor = generateRandomRgb()
+        }, 2000)
+    })
+    
+    function generateRandomNumber(){
+        return Math.random()*255
+    }
+    
+    function generateRandomRgb(){
+        var randomR = generateRandomNumber()
+        var randomG = generateRandomNumber()
+        var randomB = generateRandomNumber()
+        return `rgb(${randomR}, ${randomG}, ${randomB})`
+    }
+    // the generateRandomNumber() and generateRandomRgb() function will return a different
+    // everytime they are used
+    // using many functions that are used for a single purpose is a good practice
+    // and is better than using fewer functions with many purposes 
+</script>
+
+</html>

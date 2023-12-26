@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        <div style="color: white; width: 100%; height: 50vh; font-size: 40px; background: rgb(46, 1, 1)">
+            <div style="display: flex; justify-content: center; align-items: center; height: 50%">
+                <div style="height: 40px">
+                    <input id="name-input" onchange="nameInputChanged(this)" type="text" style="height: 100%; width: 300px; border: none">
+                    <button id="submit-btn" style="border: none; background: white; height: 100%; width: 100px">send</button>
+                </div>
+            </div>
+
+            <div style="text-align: center">
+                <h3 id="currentName">Ttttt</h3>
+            </div>
+        </div>
+
+        <div style="color: black; display: flex; justify-content: center; align-items: center; width: 100%; font-size: 40px; height: 50vh">
+            <h2 id="message">please enter name</h2>
+        </div>
+    <style>        
+    </style>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // this method of reassigning value to make code shorter is call refactor
+    // also always check and test your code after refactoring because refactoring
+    // can cause alot of mistakes
+    let messageElement = document.getElementById("message")
+    let isSubmitted = false
+    function nameInputChanged(input){
+        // console.log(input.value)
+        document.getElementById("currentName").innerHTML = input.value
+    }
+
+    document.getElementById("submit-btn").addEventListener("click", function(){
+
+        if(!isSubmitted){
+            isSubmitted = true
+            // messageElement.innerHTML = ""
+            let child = messageElement.firstChild
+            messageElement.removeChild(child)
+        }
+        
+        let value = document.getElementById("name-input").value
+
+        let textNode = document.createTextNode(value)
+
+        messageElement/*document.getElementById("message")*/.appendChild(textNode)
+
+        let brElement = document.createElement("br")
+
+        messageElement/*document.getElementById("message")*/.appendChild(brElement)
+    })
+
+    messageElement/*document.getElementById("message")*/.addEventListener("mouseover", function(){
+        if (isSubmitted){
+            this.style.background = 'green'
+        }else {
+            this.style.background = 'red'
+        }
+    })
+
+    messageElement/*document.getElementById("message")*/.addEventListener("mouseout", function(){
+        this.style.background = 'white'
+    })
+
+
+
+</script>
+
+</html>

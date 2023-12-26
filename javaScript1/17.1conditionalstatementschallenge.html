@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- the webpsge should allow the user to input 
+    the weight and height and a submit button the result 
+    also be displayed in the page via js -->
+    <input id="height-input" type="number">
+    <input id="weight-input" type="number">
+    <button id="submit-btn">submit</button>
+    <h3 id="result"></h3>
+</body>
+<script>
+    // BMI = (weight by kg)/(heightbymeter^2)
+    // BMI is a world famous measurment (body mass index)
+    // that is used to measure if someone is fat, thin or
+    // just right weight
+    // the BMI (bodymasssomethingtable)
+    // BMI value   classification
+    // <18         thin
+    // 18 to 24.9  ideal weight
+    // 25-29.9     overweight
+    // 30-34.9     firstclassobesity
+    // 35-39.9     secondclassobesity
+    // >40         dangerous obesity 
+    document.getElementById("submit-btn").addEventListener("click", function(){
+        // consol-e.log("click")
+    var height = document.getElementById("height-input").value
+        console.log(height)
+    // var height = 10
+    var weight = document.getElementById("weight-input").value
+        console.log(weight)
+    // var weight = 20
+
+    var BMI = weight / (height * height)
+        console.log(BMI)
+    // document.getElementById("result").innerHTML = 
+    // `${allCaps} --- ${replace0} --- ${reverseStr}`
+    switch (BMI) {
+        case (BMI > 40):
+            document.getElementById("result").innerHTML = "you need help you fat fuck"
+            console.log("you need help you fat fuck")
+            break
+        case (BMI <= 40):
+            document.getElementById("result").innerHTML = "you have second degree obesity"
+            console.log("you have second degree obesity")
+            break
+        case (BMI <= 35):
+            document.getElementById("result").innerHTML = "you are in the first level of obesity"
+            console.log("you are in the first level of obesity")
+            break
+        case (BMI <= 30):
+            document.getElementById("result").innerHTML = "you are weight is above ideal exercise!"
+            console.log("you are weight is above ideal exercise!")
+            break
+        case (BMI <= 25):
+            document.getElementById("result").innerHTML = "you are perfect keep doing what you are doing"
+            console.log("you are perfect keep doing what you are doing")
+            break
+        case (BMI < 18):
+            document.getElementById("result").innerHTML = "you need to eat more food you dont have an ass"
+            console.log("you need to eat more food you dont have an ass")
+            break
+       
+    }
+      })
+    //   unfortunately i was unable to solve the challenge
+
+      
+  
+
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // // let is function scoped and also block scoped
+    // let xyz = "hello world"
+    // xyz = "hi"
+    // console.log(xyz)
+    // for (var i = 0; i < 6; i++){
+    //     var x = 20
+    //     // var y = 10
+    // }
+
+    // {
+    //     let w = 10
+    // }
+
+    
+
+    // var y = 0 
+
+    // function test(){
+    //     y = 10
+    //     let w = 10
+    // }
+
+    // console.log(w)
+    
+    // const values cannot be changed trying tp change the value will lead to an error
+    // using const has many benefits:
+    // 1 - it makes it easier for the computer to complie the code
+    // 2 - when you want to set a fixed value that you know shouldn't be changed
+    // if someone else is also working on the code 
+    // 3 - it makes it easier to read the code by knowing certain values are fixed 
+    // and there is a reason they are fixed 
+    // const is block scoped and also function scoped unlike var which is function scoped 
+    //  but not block scoped
+    let w = 10
+    w = 20
+    console.log(w)
+
+    // const x = 20
+    // x = 10
+    // console.log(x)
+
+    const numberOfMonths = 12
+    // console.log(x)
+
+    {
+        const y = 20
+    }
+
+    console.log(y)
+</script>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="new-color" style="width: 100%; height: 100%;">
+       <h1>lsoihfisgf</h1>
+       <button id="generate-color">Generate Color</button>
+       <h1>lsiuhcgisegvsgvslisge</h1>
+        
+    </div>
+
+    
+    
+    
+</body>
+
+<script>
+    // Math.random() is js function used to generate a random number, and then 
+    // concatenate it with a string representing a color in hexadecimal format
+    // to change color of tage with id use
+    // also onclick="thedesiredfunction()" can be used with the button tag instead 
+    // of eventListener("click") i think 
+    // document.gettElementById("id").style.color = "thedesiredcolor"
+    // var randomColor = Math.random()
+    // console.log(randomColor)
+
+    // setInterval(function(){
+    //     console.log(randomColor)
+    // }, 3000)
+    var colors = ["red", "green", "blue", "yellow"]
+    function changeColor() {
+        var randomColor = colors[Math.floor(Math.random() * colors.length)]
+        var newColor = document.getElementById("new-color");
+        newColor.style.background = randomColor;
+    }
+
+    document.getElementById("generate-color").addEventListener("click", function(){
+        setInterval(function(){
+        changeColor()
+    }, 3000)
+        
+        
+        
+    })
+
+
+
+
+    
+
+</script>
+
+</html>
