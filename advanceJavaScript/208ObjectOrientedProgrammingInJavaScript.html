@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // the teacher noted that 1- this is not an object oriented programming 
+    // course and that this concept is big and cannot be covered in a single 
+    // lesson 
+    // that being said this is merely an attempt to give us an impression 
+    // or and idea about what object oriented programming is and the reason
+    // why the ne key word was used
+    // 2- although oop is a very important concept for programming in general
+    // this concept is not used as much in Javascript, functional programming
+    // is what is most commonly used in Javascript
+    // Although we are not familiar with what fp means it is the programmibg
+    // method we have been using in all the previous lessons so far up
+    // to this point, we have been defining functions and deviding the 
+    // code into functions
+    // by dividing code into classes and using oop concepts like inheritance
+    // we are moving towards oop, although that might it is important
+    // to understand that oop is less commonly used than fp in javascript
+    // not only that but also oop was not available in javascript before
+    // and is vailabl in javascript es6 in way that gives an illusion that
+    // it is oop but in reality and behind the scene what is actually used
+    // is something called prototype was avaialable in Javascript and is 
+    // used in a way that allows us to write code that is similliar to 
+    // classes enabling js programmers to use oop
+    // in conclusion oop is a concept that is rooted in js or in other
+    // words js was not vreated with oop in mind
+    // oop in js is 1- anything that uses JSON because it stands for
+    // Java Script Object Notation the following is a json object:
+    let x = {
+        "name": "yarob",
+        "age": 876
+    }
+
+    // console.log(typeof x)
+    // oop means that different parts of the code are objects or beings
+    // that have behaviours and properties
+    // the behaviours and properties are grouped together as products
+    // behaviours=functions and properties=vriables 
+    // and grouped together=classes
+    // the class then becomes a class or factory that can produce 
+    // many thing.
+    // it useless if it is not used to produce products
+    // it is like aa bakery that cannot be eaten but can be used to produce
+    // things we can eat
+    // in oop we first buiold thge classes then the products that come out 
+    // of the class
+    // 2- classes:
+
+    class Animal {
+
+        // the following is implemented as soon as the class is assigned to a
+        // a new variable
+        constructor(customName, customColor){
+            // console.log("new object")
+            // this key word is used to refer to variables that are being 
+            // assigned at the same exact moment and this concept is very
+            // confusing for begginers 
+            // a light bulb just turned on inside my head--
+            // this is th object that is making assignment to it self
+            this.name = customName
+            this.color = customColor
+        }
+
+        move(){
+            console.log("moving" + this.name)
+        }
+
+        jump(){
+            console.log("jumping" + this.color)
+        }
+    }
+
+    let lion = new Animal("lion", "brown")
+    let tiger = new Animal("tiger", "orange")
+
+    // console.log(lion.name)
+    // let bird = new Animal()
+    lion.move()
+    lion.jump()
+
+    tiger.move()
+
+    // there are two types of objects in js class objects and json objects
+    console.log(typeof tiger)
+    // the prototype that json objects are using is the same oop is using
+    // this lesson does not into the details of oop but merely glimpse
+    // to try to have and how the oop parts of of the code work 
+
+</script>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- EXTERNAL LIBRARIES -->
+    <!-- font library -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajwal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet" -->
+    <!-- icon library -->
+    <!-- <link rel="stylessheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />     -->
+
+
+    <style>
+        body {
+            background-color: rgb(71, 71, 71)
+            /* font-family: 'Tajawal', sans-serif; */
+        }
+        .book {
+            display: flex;
+            background-color: white;
+            padding: 4px;
+            border-bottom: solid black 1px;
+            transition: box-shadow 0.2s;
+        }
+
+        tr:hover {
+          box-shadow: 0px 3px 15px rgba(97, 97, 97, 0.843);  
+        }
+
+        /* .book:hover {
+          box-shadow: 0px 3px 15px rgba(97, 97, 97, 0.843);  
+        } */
+        .books-list {
+            background-color: rgb(239, 239, 239);
+            /* width: 60%; */
+            margin-top: 130px;
+        }
+
+        button {
+            border: none;
+            font-size: 20px;
+            box-shadow: 0px 3px 5px rgba(160, 168, 168, 0.38);
+        }
+
+        button.circular {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 0;
+        }
+
+        .search-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: .25rem;
+        }
+
+        input {
+            font-size: 1rem;
+        }
+
+        /* .hide {
+            display: none;
+        } */
+    </style>
+</head>
+<body>
+    <div style="direction: ltr">
+        <!-- CENTER DIV -->
+        <div style="display: flex; justify-content: center; align-items: center">
+            <!-- BOOKS LIST -->
+            <div class="books-list">
+                <div style="width:100%; text-align: center; background-color: rgb(124, 124, 124); color: white; padding-top: 8px; padding-bottom: 8px">
+                    <div class="search-wrapper">
+                        <label for="search">Search book title or author</label>
+                        <input type="search" id="search">
+                    </div>
+                </div>
+                <!-- HEADER -->
+                <div style="width:100%; text-align: center; background-color: rgb(124, 124, 124); color: white; padding-top: 8px; padding-bottom: 8px">
+                    <h1 style="display: inline">available books</h1>
+
+                    <button id="add-btn" class="circular" style="float: left; background: white; margin-left: 10px">
+                        <!-- <span class="material-symbols-outlined">
+                            add
+                        </span> -->
+                        add
+                    </button>
+                </div>
+                <!--// HEADER //-->
+
+                <div style="padding: 20px; padding-bottom: 0px;">
+                    <!-- BOOK -->
+                    <!-- BOOKs TABLE HEADING -->
+                    <div class="book" >
+                        <div style="width: 100%">
+                            <table >
+                                <thread >
+                                    <tr >
+                                        <th style="width: 14%">Title</th>
+                                        <th style="width: 14%">Author</th>
+                                        <th style="width: 14%">Genre</th>
+                                        <th style="width: 10%">Year</th>
+                                        <th style="width: 10%">Quantity</th>
+                                        <th style="width: 14%">Last update</th>
+                                        <th style="width: 24%">Actions</th>
+                                    </tr>
+                                </thread>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--// BOOKS TABLE HEADING //-->
+                <!-- BOOKS -->
+                <div id="books" style="padding: 20px; padding-top: 5px;">
+                    <!-- BOOK -->
+
+                    <!--// BOOK //-->
+                </div>
+                <!--// BOOKS //-->
+            </div>
+            <!--// BOOKS LIST //-->
+        </div>
+        <!--// CENTER DIV //-->
+    </div>
+</body>
+
+<script>
+
+    let books = [
+        {
+            "title": "for dummies",
+            "author": "dummy",
+            "genre": "programming",
+            "year": "1987",
+            "quantity": "30",
+            "date": "10/10/2030",
+        },
+        {
+            "title": "for dummies",
+            "author": "dummy",
+            "genre": "programming",
+            "year": "1987",
+            "quantity": "30",
+            "date": "10/10/2030",
+        },
+        {
+            "title": "for dummies",
+            "author": "dummy",
+            "genre": "programming",
+            "year": "1987",
+            "quantity": "30",
+            "date": "10/10/2030",
+        }, 
+        {
+            "title": "for dummies",
+            "author": "dummy",
+            "genre": "programming",
+            "year": "1987",
+            "quantity": "30",
+            "date": "10/10/2030",
+        }, 
+    ]
+
+    function getBooksFromStorage(){
+        let retrievedBooks = JSON.parse(localStorage.getItem("books"))
+        
+        books = retrievedBooks ?? []
+
+        // if(retrievedBooks == null){
+        //     books = []
+        // }else {
+        //     books = retrievedBooks
+        // }
+    }
+
+    getBooksFromStorage()
+
+    function fillBooksOnThePage(){
+
+        document.getElementById("books").innerHTML = ""
+
+        let index = 0
+        for (book of books){
+
+            let content = `
+                <!-- BOOK INFO & ACTIONS -->
+                <div class="book">
+                    <div style="width: 100%">
+                        <table>
+                            <thread>
+                                <tr style="width: 100%">
+                                    <td style="width: 14%"><div style="width: 14%">${book.title}</div></td>
+                                    <td style="width: 14%"><div style="width: 14%">${book.author}</div></td>
+                                    <td style="width: 14%"><div style="width: 14%">${book.genre}</div></td>
+                                    <td style="width: 10%"><div style="width: 10%">${book.year}</div></td>
+                                    <td style="width: 10%"><div style="width: 10%">${book.quantity}</div></td>
+                                    <td style="width: 14%">
+                                        <div style="width: 14%">
+                                            <!-- <span class="material-symbols-outlined">
+                                                calender_month
+                                            </span> -->
+                                             <span>
+                                                ${book.date}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div style="display: flex; justify-content: space-evenly; align-items: center;">
+                                            <button onclick="deleteBook(${index})" class="circular" style="background-color: rgb(114, 0, 0); color: white">
+                                                <!-- <span class="material-synbols-outlined">
+                                                    delete
+                                                </span> -->d
+                                            </button>
+                                
+                                            <button onclick="editBook(${index})" class="circular" style="background-color: rgba(0, 16, 197, 0.692); color: white">
+                                                <!-- <span class="material-synbols-outlined">
+                                                    edit
+                                                </span> -->
+                                                e
+                                            </button>
+                                        </div>
+                                    </td>
+                                                    
+                                </tr>
+                            </thread>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--// BOOK INFO & ACTIONS //-->
+            `
+            document.getElementById("books").innerHTML += content
+            index++
+
+            
+        }
+    }
+
+    fillBooksOnThePage()
+
+    let storedBook = localStorage.getItem("books")
+    alert(storedBook)
+
+
+    document.getElementById("add-btn").addEventListener("click", function(){
+        let now = new Date()
+        let date = now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear() + "|" + now.getHours() 
+        
+        let bookInfo = prompt("please enter the five values seperated by a comma:")
+
+        if(bookInfo == null){
+            fillBooksOnThePage()
+        }else {
+            let values = bookInfo.split(",").map(value => value.trim())
+            console.log(bookInfo)
+            console.log(values)
+
+        
+        
+            let bookTitle = values[0]
+            let bookAuthor = values[1]
+            let bookGenre = values[2]   
+            let bookYear = values[3]
+            let bookQuantity = values[4]
+            let bookObj = {
+            "title": bookTitle,
+            "author": bookAuthor,
+            "genre": bookGenre,
+            "year": bookYear,
+            "quantity": bookQuantity,
+            "date": date,
+            }
+
+            books.push(bookObj)
+
+            storeBooks()
+
+            fillBooksOnThePage()
+        }
+
+        
+    })
+
+
+    function deleteBook(index){
+        let book = books[index]
+        let isConfirmed = confirm("Are you sure you want to remove book from library?" + book.title)
+        if (isConfirmed){
+            books.splice(index, 1)
+
+            storeBooks()
+
+            fillBooksOnThePage()
+        }
+        
+    }
+
+    function editBook(index){
+        let book = books[index]
+
+        let now2 = new Date()
+        let newDate = now2.getDate() + "/" + (now2.getMonth()+1) + "/" + now2.getFullYear() + "|" + now2.getHours() 
+        
+
+        let newBookInfo = prompt("please enter the five values seperated by a comma:", `${book.title},${book.author},${book.genre},${book.year},${book.quantity}`)
+
+        if(newBookInfo == null){
+            fillBooksOnThePage()
+        }else {
+            let newValues = newBookInfo.split(",").map(value => value.trim())
+            
+            
+
+            
+            
+            let newBookTitle = newValues[0]
+            let newBookAuthor = newValues[1]
+            let newBookGenre = newValues[2]   
+            let newBookYear = newValues[3]
+            let newBookQuantity = newValues[4]
+            
+            book.title = newBookTitle
+
+            book.author = newBookAuthor
+            book.genre = newBookGenre
+            book.year = newBookYear,
+            book.quantity = newBookQuantity
+            book.date = newDate
+
+            storeBooks()
+
+            fillBooksOnThePage()
+        }
+
+    }
+
+    // ========= STORAGE FUNCTIONS ==========
+    function storeBooks(){
+        let booksString = JSON.stringify(books)
+        localStorage.setItem("books", booksString)
+    }
+
+    // important note that must be resolved before finalizing 
+    // when clicking edit or add button a an error is retured
+    // if id dont enter a value
+
+
+
+    let searchBar = document.getElementById("search")
+
+
+    searchBar.addEventListener("keyup", (event) => {
+        
+        let searchQuery = event.target.value.toLowerCase()
+
+        if (searchQuery) {
+            let filteredBooks = books.filter((book) => {
+                return book.title.toLowerCase().includes(searchQuery) || book.author.toLowerCase().includes(searchQuery)
+            })
+
+            fillBooksOnThePage()
+            console.clear()
+            
+            if (filteredBooks.length > 0) {
+                console.log("matching books: ")
+                function fillFilteredBooksOnThePage(){
+
+                    document.getElementById("books").innerHTML = ""
+
+                    let filteredIndex = 0
+                    for (filteredBook of filteredBooks){
+
+                    let filteredContent = `
+                        <!-- BOOK INFO & ACTIONS -->
+                        <div class="book">
+                            <div style="width: 100%">
+                                <table>
+                                    <thread>
+                                        <tr>
+                                            <td style="width: 14%">${filteredBook.title}</td>
+                                            <td style="width: 14%">${filteredBook.author}</td>
+                                            <td style="width: 14%">${filteredBook.genre}</td>
+                                            <td style="width: 10%">${filteredBook.year}</td>
+                                            <td style="width: 10%">${filteredBook.quantity}</td>
+                                            <td style="width: 14%">
+                                                <div>
+                                                    <!-- <span class="material-symbols-outlined">
+                                                        calender_month
+                                                    </span> -->
+                                                    <span>
+                                                        ${filteredBook.date}
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td style="width: 24%">
+                                                <div style="display: flex; justify-content: space-evenly; align-items: center;">
+                                                    unailable
+                                                </div>
+                                            </td>
+                                                            
+                                        </tr>
+                                    </thread>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--// BOOK INFO & ACTIONS //-->
+                    `
+                    document.getElementById("books").innerHTML += filteredContent
+                    filteredIndex++
+
+    
+                    }
+                }
+                fillFilteredBooksOnThePage()
+                filteredBooks.forEach((book) => console.log(book))
+            } else {
+                document.getElementById("books").innerHTML = "<h1>No matching title or author</h1>"
+                console.log("No matching books found. ")
+            }
+        } else {
+            fillBooksOnThePage()
+            console.clear()
+        }
+      
+    })
+    
+   
+    
+</script>
+</html>

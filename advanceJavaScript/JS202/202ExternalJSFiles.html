@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="margin-right: 10px;">
+            <h2>First Number</h2>
+            <input type="text" id="first-input">
+        </div>
+
+        <div>
+            <h2>Second Number</h2>
+            <input type="text" id="second-input">
+        </div>
+
+    </div>
+
+    <div style="width: 100%; text-align: center; margin-top: 10px;">
+        <button style="width: 100px; height: 50px" id="calc-btn">Divide</button>
+    </div>
+    
+    <div style="width: 100%; text-align: center">
+        <h2>Result: <span id="result">20</span></h2>
+    </div>
+
+</body>
+
+
+<script src="202logic.js"></script>
+<script src="202eventListeners.js"></script>
+<script>
+    // document.getElementById("calc-btn").addEventListener("click", function(){
+    //     let firstInput = document.getElementById("first-input").value
+    //     let secondInput = document.getElementById("second-input").value
+    //     // agood programming practice is to seperate functions into individual 
+    //     // functions each with a specific task and this is called single 
+    //     // responsibility principle
+    //     let result = divide(Number(firstInput), Number(secondInput))
+    //     document.getElementById("result").innerHTML = result
+
+    // })
+
+    // function divide(num1, num2){
+    //     return num1/num2
+    // }
+
+    
+    // when you have big projects usually the code gets intermingled
+    // with other lines of code and the result of that is you and your
+    // team getting lost
+    // therefore it is preferable that you build a clear structure
+    // for the code that enables you to divivde the code into smaller units
+    // that hold a group of things together
+    // an example of this structure is: 
+    // instead of putting all your code in the script tag you put it
+    // in seperate files. on of the files would have the event listeners
+    // and seperate file for functions and so on
+    // we will start by moving the function into a seperate file because it
+    // is the smaller of the two and the file wouldn't be an html file
+    // then you must import that file into the html file otherwise it 
+    // wont work 
+    // this is done inside the <script src=""> file
+    // we also do the same for the event listener
+</script>
+
+</html>

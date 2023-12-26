@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="margin-right: 10px;">
+            <h2>First Number</h2>
+            <input type="text" id="first-input">
+        </div>
+
+        <div>
+            <h2>Second Number</h2>
+            <input type="text" id="second-input">
+        </div>
+
+    </div>
+
+    <div style="width: 100%; text-align: center; margin-top: 10px;">
+        <button style="width: 100px; height: 50px" id="calc-btn">Divide</button>
+    </div>
+    
+    <div style="width: 100%; text-align: center">
+        <h2>Result: <span id="result">20</span></h2>
+    </div>
+
+    <div style="width: 100%; text-align: center; margin-top: 10px;">
+        <a href="203errorHandling.html" style="width: 100px; height: 50px" id="calc-btn">Go to first page</button>
+    </div>
+
+</body>
+
+
+<script src="202logic.js"></script>
+<script ></script>
+<script>
+
+document.getElementById("calc-btn").addEventListener("click", function(){
+    let firstInput = document.getElementById("first-input").value
+    let secondInput = document.getElementById("second-input").value
+    // agood programming practice is to seperate functions into individual 
+    // functions each with a specific task and this is called single 
+    // responsibility principle
+    try {
+        let result = divide(Number(firstInput), Number(secondInput))
+        // console.log("hello")
+        // console.log("hi")
+        // console.log("welcome")
+        document.getElementById("result").innerHTML = result
+    }
+    catch (error) {
+        document.getElementById("result").innerHTML = error
+        // alert("Error: "+ error)
+        // console.log(error)
+    }
+
+    console.log("hello world")
+    // or
+    // finally {
+    //     console.log("hello world")
+    // }
+
+    // let result = divide(Number(firstInput), Number(secondInput))
+
+    // if(result != "ان كنون يابقرة ايشو هذا الجنان ايشو هذا الخبر حقك الخشرفة"){
+    //     document.getElementById("result").innerHTML = `<<( ${result} )>>`
+    // }
+    
+
+})
+</script>
+
+</html>

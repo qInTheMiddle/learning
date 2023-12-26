@@ -1,0 +1,30 @@
+<html>
+    <head>
+      
+       <style>
+         #abs-div{
+            background:orange;
+            /* pixel is an absolute unit */
+            /* width:20vw; */
+            width:20vh;
+            height:10vh;
+         }
+         #rel-div{
+            background:green;
+            /* precentage and vw viewwidth and hw heightwidth is a relative unit and are alomost identical in value */
+            width:70%;
+            height:100px;
+         }
+         /* relative units are important for responsive design
+         but it requires a lot of experience to pull it off */
+       </style>
+     
+    </head>
+    <body>
+        <div style="width:200px; background:red;">
+       <div id="abs-div"></div>
+    </div>
+       <div id="rel-div"></div>
+    
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h2>Hello JS Request</h2> -->
+    <div id="content">
+
+    </div>
+</body>
+
+<script>
+
+    function readPosts(){
+
+        // this is how we assign JSON classes as value to variable 
+        let request = new XMLHttpRequest()
+        // the benefit of postman is to gather requests and prepare them to be
+        // used bu JavaScript when needed
+        request.open("GET", "https://jsonplaceholder.typicode.com/posts")
+        // changing response so that it returns object instead of string
+        request.responseType = "json"
+        request.send()
+    
+        request.onload = function(){
+        
+            let posts = request.response
+
+            for (post of posts){
+            document.getElementById("content").innerHTML += `<h1>${post.title}</h1>`
+           
+            }
+        }
+
+    }
+
+    
+  
+</script>
+</html>
