@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- EXTERNAL LIBRARIES -->
+    <!-- font library -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajwal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet" -->
+    <!-- icon library -->
+    <!-- <link rel="stylessheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />     -->
+
+
+    <style>
+        body {
+            background-color: rgb(255, 120, 221)
+            /* font-family: 'Tajawal', sans-serif; */
+        }
+        .book {
+            display: flex;
+            background-color: white;
+            padding: 4px;
+            border-bottom: solid black 1px;
+            transition: box-shadow 0.2s;
+        }
+
+        tr:hover {
+          box-shadow: 0px 3px 15px rgba(97, 97, 97, 0.843);  
+        }
+        /* .book:hover {
+          box-shadow: 0px 3px 15px rgba(97, 97, 97, 0.843);  
+        } */
+        .books-list {
+            background-color: rgb(239, 239, 239);
+            /* width: 60%; */
+            margin-top: 130px;
+        }
+
+        button {
+            border: none;
+            font-size: 20px;
+            box-shadow: 0px 3px 5px rgba(160, 168, 168, 0.38);
+        }
+
+        button.circular {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 0;
+        }
+    </style>
+</head>
+<script src="moment.js"></script>
+<body>
+    <div style="direction: ltr">
+        <!-- CENTER DIV -->
+        <div style="display: flex; justify-content: center; align-items: center">
+            <!-- BOOKS LIST -->
+            <div class="books-list">
+                <div style="width:100%; text-align: center; background-color: rgb(124, 124, 124); color: white; padding-top: 8px; padding-bottom: 8px">
+                    <h1 style="display: inline">search</h1>
+                    <button id="search-btn" class="circular" style="float: left; background: white; margin-left: 10px">
+                        <!-- <span class="material-symbols-outlined">
+                            search
+                        </span> -->
+                        search
+                    </button>
+                </div>
+                <!-- HEADER -->
+                <div style="width:100%; text-align: center; background-color: rgb(124, 124, 124); color: white; padding-top: 8px; padding-bottom: 8px">
+                    <h1 style="display: inline">available books</h1>
+
+                    <button id="add-btn" class="circular" style="float: left; background: white; margin-left: 10px">
+                        <!-- <span class="material-symbols-outlined">
+                            add
+                        </span> -->
+                        add
+                    </button>
+                </div>
+                <!--// HEADER //-->
+
+                <div style="padding: 20px; padding-bottom: 0px;">
+                    <!-- BOOK -->
+                    <!-- BOOKs TABLE HEADING -->
+                    <div class="book" >
+                        <div style="width: 100%">
+                            <table >
+                                <thread >
+                                    <tr >
+                                        <th style="width: 14%">Title</th>
+                                        <th style="width: 14%">Author</th>
+                                        <th style="width: 14%">Genre</th>
+                                        <th style="width: 10%">Year</th>
+                                        <th style="width: 10%">Quantity</th>
+                                        <th style="width: 14%">date</th>
+                                        <th style="width: 24%">Actions</th>
+                                    </tr>
+                                </thread>
+                                <tbody id="books">
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--// BOOKS TABLE HEADING //-->
+               
+            </div>
+            <!--// BOOKS LIST //-->
+        </div>
+        <!--// CENTER DIV //-->
+    </div>
+</body>
+
+<script>
+
+    let books = [
+        {
+            "title": "for dummies",
+            "author": "dummy",
+            "genre": "programming",
+            "year": "1987",
+            "quantity": "30",
+            "date": "10/10/23",
+        },
+        {
+            "title": "for dummies",
+            "author": "dummy",
+            "genre": "programming",
+            "year": "1987",
+            "quantity": "30",
+            "date": "10/10/23",
+        },
+        {
+            "title": "for dummies",
+            "author": "dummy",
+            "genre": "programming",
+            "year": "1987",
+            "quantity": "30",
+            "date": "10/10/23",
+        }, 
+        {
+            "title": "for dummies",
+            "author": "dummy",
+            "genre": "programming",
+            "year": "1987",
+            "quantity": "30",
+            "date": "10/10/23",
+        }, 
+    ]
+
+    function fillBooksOnThePage(){
+        
+
+        
+        let tbody = document.getElementById("books")
+
+        tbody.innerHTML = ""
+
+        // document.getElementById("books").innerHTML = ""
+
+        let index = 0
+        for (book of books){
+
+            
+            
+            let rows = books.map(item => {
+                return `<tr>
+                            <td style="width: 14%">${book.title}</td>
+                            <td style="width: 14%">${book.author}</td>
+                            <td style="width: 14%">${book.genre}</td>
+                            <td style="width: 10%">${book.year}</td>
+                            <td style="width: 10%">${book.quantity}</td>
+                            <td style="width: 14%">${book.date}</td>
+                            <td style="width: 24%">
+                                <button onclick="deleteBook(${index})" class="circular" style="background-color: rgb(114, 0, 0); color: white">
+                                    <!-- <span class="material-synbols-outlined">
+                                        delete
+                                    </span> -->d
+                                </button>
+                                
+                                <button onclick="editBook(${index})" class="circular" style="background-color: rgba(0, 16, 197, 0.692); color: white">
+                                    <!-- <span class="material-synbols-outlined">
+                                        edit
+                                    </span> -->
+                                    e
+                                </button>
+                            </td>
+                `
+            })
+
+            
+            // tbody.innerHTML += rows.join("") 
+            tbody.innerHTML += rows.filter((row, index, self) => self.indexOf(row) === index).join("")
+
+            index++
+
+            
+        }
+    }
+
+    fillBooksOnThePage()
+    
+
+    // import { format } from `date-fns`
+    // let { format } = require("dte-fns")
+
+    // let dateFns = require('moment')
+    // let format = dateFns.format
+
+    document.getElementById("add-btn").addEventListener("click", function(){
+        let now = new Date()
+        let formattedDate = moment(now).format('MM/DD/YY|HH:mm')
+
+        let bookInfo = prompt("please enter the five values seperated by a comma:")
+        let values = bookInfo.split(",").map(value => value.trim())
+        console.log(bookInfo)
+        console.log(values)
+
+        
+        
+      
+
+        let [bookTitle, bookAuthor, bookGenre, bookYear, bookQuantity] = values
+
+       
+
+        let bookObj = {
+            "title": bookTitle,
+            "author": bookAuthor,
+            "genre": bookGenre,
+            "year": bookYear,
+            "quantity": bookQuantity,
+            "date": formattedDate,
+        }
+
+        books.push(bookObj)
+        fillBooksOnThePage()
+    })
+
+
+    function deleteBook(index){
+        let book = books[index]
+        let isConfirmed = confirm("Are you sure you want to remove book from library?" + book.title)
+        if (isConfirmed){
+            books.splice(index, 1)
+            fillBooksOnThePage()
+        }
+        
+    }
+
+    function editBook(index){
+        let book = books[index]
+
+        let now2 = new Date()
+        // let newDate = now2.getDate() + "/" + (now2.getMonth()+1) + "/" + now2.getFullYear() + "|" + now2.getHours() + ":" + now2.getMinutes()
+        let formattedNewDate = moment(now2).format('MM/DD/YY|HH:mm')
+
+        let newBookInfo = prompt("please enter the five values seperated by a comma:", `${book.title},${book.author},${book.genre},${book.year},${book.quantity}`)
+        let newValues = newBookInfo.split(",").map(value => value.trim())
+
+        // by using forEach and Object.keys() is the shrtest way to do this:
+        
+        Object.keys(book).forEach((key, index) => {
+            book[key] = newValues[index]
+            book.date = formattedNewDate
+        })
+        
+
+
+
+        fillBooksOnThePage()
+
+    }
+
+    // important note that must be resolved before finalizing 
+    // when clicking edit or add button a an error is retured
+    // if id dont enter a value
+    
+    
+</script>
+</html>
