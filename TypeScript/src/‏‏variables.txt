@@ -1,0 +1,62 @@
+// // npm i -g typescript
+// // npm list -g 
+// // tsc --version
+// // to initialize typescript type: 
+// // tsc --init
+// // in the tsconfig file set: 
+// // "outDir": "./", to 
+// // // "outDir": "./dist", 
+// // "rootDir": "./", to
+// // "rootDir": "./src",
+// // then to translate type only tsc
+// // to avoid having to do this everytime type:
+// // tsc --watch
+// let x = 10;
+// x = 7;
+
+// x = 2;
+
+// x = 30;
+
+// // const y:string = "shfwk,fh"
+
+
+// let y: boolean = true;
+
+// // y = false;
+
+// // let w: Number = 10;
+
+// // webbrowsers cant read ts so always have to translate it to
+// // JavaScript
+
+// let str: string = "hello world";
+
+// let num: number = 20;
+
+// // this is how arrays are defined:
+// let arr: number[] = [1, 2, 3, 4, 5];
+// let strs: string[] = ["hello", "world"];
+
+// // multiple datatypes for one variable:
+// let arr2: (string|number|boolean)[] = [1, 10, true, "hello"];
+
+// // type any to accept all data types:
+
+// let arr3: any[] = [1, 5, false, "hi"];
+
+// let v: any = 10;
+
+// v = "hello";
+
+// alert(num);
+
+// tuple types less commonly used:
+let x = ["hello", 10];
+
+x.push(20);
+
+let y: [string,number] = ["hello", 10];
+
+// y.push(20); /* this will result in an error */
+// | is called union not or in typescript

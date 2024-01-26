@@ -1,0 +1,13 @@
+// The following two syntaxes do the same thing:
+const myFunction = async () => {
+    return "Hello World";
+};
+
+const myFunction2 = () => {   /* generic can be used to specify type of Promise<unknown> */
+    return new Promise<string>((resolve, reject) => {
+        resolve("Hello World");
+    });
+};
+
+
+const x = /*await*/ myFunction(); /*when we add await x datatype changes to string*/

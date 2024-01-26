@@ -1,0 +1,14 @@
+// generics:
+// one of many ways to use generics just to give idea:
+// making datatypes something we can decide when we use function like parameters value: 
+const sum = <T>(number1: T, number2: T) => { /* <T> means we will decide when we use the function */
+    // let y: T
+    // return number1 + number2;
+};
+
+
+
+sum<string>("sdjlfds", "10");
+
+
+sum<number>(10, 20);

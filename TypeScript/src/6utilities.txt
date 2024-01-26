@@ -1,0 +1,75 @@
+// more advanced concepts:
+// typescrip utilities:
+
+interface Person {
+    name: string;
+    age: number;
+    email: string;
+}
+
+// omit: inherit interface but remove key we choose:
+interface PersonWithoutEmail extends Omit<Person, 'email'> {}
+
+const person: PersonWithoutEmail = {
+    name: 'July',
+    // email: "asac@sgsgg", /* wont work because email has been omited*/
+    age: 20,
+};
+
+//Pick: inherit only chosen keys:
+interface PersonWithNameOnly extends Pick<Person, 'name'>{}
+
+//Partial: inherit but make keys optional:
+interface OptionalPerson extends Partial<Person>{
+
+}
+
+const p : OptionalPerson = {
+    name: "yyyy",
+
+}
+
+//Required: inherit interface with optional keys but instead make them mandatory:
+interface Car {
+    carName: string;
+    model?: string;
+}
+interface RequiredCar extends Required<Car> {
+
+}
+const car: RequiredCar = {
+    carName: "BMW",    /* will get error if we dont add value to all keys */
+    model: "igig",
+}
+
+// we can also inherit using two of these utilities as long as there is no 
+// conflict between. example: if we use Partial and Required at the same time
+// make sure the interfaces dont share the same key name because that would 
+// make this key mandatory but also make it optional:
+interface Employee extends Partial<Person>, Required<Car> {}
+
+// types can be use the same but syntax a little bit different:
+type Person2 = {
+    name2: string;
+    age2: number;
+    email2: string;
+}
+
+type Car2 = {
+    carName2: string;
+    model2?: string;
+}
+
+type PersonWithoutName2 = Omit<Person2, 'name'>
+
+
+type PersonWithCar2 = Person2 & Car2
+
+const p2: PersonWithCar2 = {
+    name2: "July",
+    age2: 18,
+    email2: "dqwfqwf",
+    carName2: "jhfh",
+    model2: "x5",
+};
+

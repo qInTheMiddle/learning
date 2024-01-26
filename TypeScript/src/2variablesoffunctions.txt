@@ -1,0 +1,29 @@
+// functions:
+const w = () => {
+    console.log("Hello World");
+
+    return 10;
+};
+
+// must return string or error appear:
+// const v: () => string = () => {
+//     return "hello";
+// };
+
+// including parameters and operations it has to be done this way:
+const v: (x: number, y: number) => number = (x, y) => {
+    return x + y; 
+}; 
+
+// also this works:
+
+const z = (x: string, y: number) => {
+    return ["hello", true]
+}
+
+// and this doesn't work because type is any by default???? not sure i understand?:
+
+// const z = (x, y) => {
+//     return ["hello", true]
+// }
+

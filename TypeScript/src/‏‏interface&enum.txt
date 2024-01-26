@@ -1,0 +1,134 @@
+// we can also define our own datatypes:
+// 1-interface?
+// 2-enum?
+// 3-class?
+
+// interface Person {
+//     name: string;
+//     age: number;
+// }
+
+// or we can make one of the keys optional using ?: 
+// ?: means : type | undefined but not the because we choose not to define key
+// so it is a different form saying the same thing: 
+interface Person {
+    name: string;
+    age?: number;
+}
+
+
+
+let x: Person;
+
+// we can choose not to define value to optional key:
+x = {
+    name: 'yyyyy',
+}; 
+
+// or value assigned to object can be exactly the way it was declared or:
+x = {
+    name: 'yyyyy',
+    age: 11,
+};
+
+
+// we can also define a variable that is either a type or another type 
+// that we specify:
+// let w: string | number = 20;
+
+// let y: string | number = 50;
+
+// let z: string | number = 50;
+
+// or we can define our own type and make it easier and shorter:
+type MyType = string | number;
+
+
+let w: MyType = 20;
+
+let y: MyType = 50;
+
+let z: MyType = 50;
+
+
+
+console.log(x.name); /*auto completion main benefit of TypeScript after the x. suggesting keys*/
+
+// when hover on my number we get number | undefined
+// const myNumber = x.age
+
+// ! stops typescript getting error and says ur sure of value
+// const myNumber:number = x.age! 
+
+// ?? means if undefined then 0 is value
+// const myNumber:number = x.age ?? 0
+
+// here we are saying we are no sure of value
+const myNumber:number | undefined = x.age
+
+// using enum to ristrict value to only three possibilities:
+enum BookingStatus {
+    initial = "initial",
+    paid = "paid",
+    cancelled = "cancelled"
+}
+
+// when there are many possibilities of booking status then use initial value:
+// let bookingStatus = "initial";
+let bookingStatus:BookingStatus = BookingStatus.initial;
+
+
+
+// bookingStatus = "paid";
+bookingStatus = BookingStatus.paid;
+
+
+// this type of mistake is usually hard to find so 
+// restricting value can be helpful using enum is very helpful
+// if(bookingStatus == "paidd"){
+    // deduct amount from user
+// }
+// so instead we do this:
+if(bookingStatus == BookingStatus.paid){
+    // deduct amount from user
+}
+
+// a constructor must be built so values can be given to variables
+// js oop but with specific datatypes in ts:
+// class Car {
+//     model:string;
+//     year:number;
+
+//     constructor(model:string, year:number){
+//         this.model = model;
+//         this.year = year;
+//     }
+// }
+
+// const c = Car()
+
+// we can also use interface then class implements that interface???:
+// interface ICar {
+//     model:string;
+//     year:number;
+
+// }
+// class Car implements ICar{
+//     model: string;
+//     year: number;
+// }
+
+// same with functions:
+interface ICar {
+    sayHello: () => void; 
+
+}
+class Car implements ICar{
+    sayHello() {
+        console.log("hello");
+    }
+}
+
+// enums and interface are not usually in the same file and are imported
+// from seperate files that are put inside modul folder of projects that 
+// follow such architecture 

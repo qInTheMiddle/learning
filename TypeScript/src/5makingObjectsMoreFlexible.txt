@@ -1,0 +1,41 @@
+// instead of this:
+// interface person {
+//     name: string;
+//     age: number;
+// }
+
+
+// const obj: person = {
+//     name: "yyyy",
+//     age: 25
+// }
+
+// console.log(obj)
+
+// we can write the shorter syntax:
+// const obj:{name: string, age: number} = {
+//     name: "yyyyy",
+//     age: 25
+// }
+
+// or simply:
+// const obj = {
+//     name: "yyyy",
+//     age: 25
+// }
+
+// but we cannot add keys:
+
+
+// obj.birthDate = "1990-01-01" /* an error we cant add this key */
+
+// to make obj flexible to allow us to add keys i we wish:
+const obj:{[key: string]: any} = {
+    name: "yyyy",
+    age: 25,
+}
+
+obj.birthDate = "1990-01-01" /* this is now possible */
+obj.x = "hello world"
+obj.y = false
+console.log(obj)

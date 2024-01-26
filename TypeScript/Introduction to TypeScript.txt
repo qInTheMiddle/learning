@@ -1,0 +1,19 @@
+Type script:
+I can be considered as a programming language
+but it is a superset of JavaScript 
+meaning that js code can be considered typescript but ts code is not js
+It is basically JavaScript with additions or JavaScript+
+JavaScipt is a loosely typed programming language meaning that we dont need specify the type of data we are using 
+ but TypeScript is not because it adds types to JavaScript
+Many companies prefer to use typeScript because it adds Type Safety to variables which improves the development experience
+because by narrowing down type of data we are able to use better auto complete options and it also protects from 
+many typs of errors
+to install globally on your system type the following in terminal:
+npm i -g typescript 
+to view all packages installed globally:
+npm list -g
+to see version:
+tsc --version
+
+to compile temporarly if issues happen:
+node_modules\typescript\bin\tsc
